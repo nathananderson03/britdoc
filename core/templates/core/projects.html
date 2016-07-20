@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+{% load static %}
+
+{%block bodytag %}projects{% endblock %}
+{% block html_title %}projects{% endblock %}
+
+{% block content %}
+
+<!-- <section class="container-fluid intro" style="background-image: url('{% static 'core/img/bg/bg-projects.jpg' %}');">
+	<div class="container row inverted">
+		<div class="col-md-offset-2 col-md-8">
+
+		</div>
+	</div>
+</section> -->
+
+<hr class="large b-bd-green" />
+<section class="container-fluid bd-green-w">
+	<div class="container row logo-panel short">
+		<h4 class="pull-left p-t-20" style="max-width:30%;">All our projects relate to one or more of our five strategic areas</h4>
+		<img src="{% static 'core/img/diagram-all.png' %}" style="min-width:60%;" />
+	</div>
+</section>
+<section class="container-fluid p-t-50">
+</section>
+
+	<a class="anchor" name="goodpitch"></a>
+	<hr class="large b-bd-blue" />
+<section class="container-fluid bd-blue-light">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Good Pitch</h2>
+		<img src="{% static 'core/img/logos/goodpitch_logo.png' %}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-blue b-r b-r-giant film-box" style="background-image: url('{% static 'core/img/bg/goodpitch3.jpg' %}'); background-position: center;">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square">
+		<h5 class="bd-blue">Good Pitch brings together documentary ﬁlmmakers with foundations, NGOs, campaigners, philanthropists, policymakers, brands and media around leading social and environmental issues — to forge coalitions and campaigns that are good for all these partners, good for the ﬁlms and good for society.   </h5>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-blue p-t-50">
+	<hr class="large" />
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+		<h5 class="inverted">"Love Good Pitch – it has created a community of like minded changemakers who believe in the power of using stories to drive social justice throughout the world." </h5><h5 class="bd-black">Rashid Shabazz, Open Society Foundations</h5>
+		</div>
+		<div class="col-md-4">
+		<h5 class="inverted">"It's been of critical, indispensible help. Can't thank you enough. Around here we now call it: Great Pitch"</h5><h5 class="bd-black">Amy Ziering, Producer, The Invisible War</h5>
+		</div>		
+		<div class="col-md-4">
+ 			<div class="bubble bd-blue-light inverted text-offset-huge-t">
+	 					<h5 class="p-t-40">Visit</h5>
+	 					<h4 class="inverted"><a class="white" href="http://goodpitch.org" target="_blank">goodpitch.org</a></h4>
+ 			</div>
+		</div>
+	</div>
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+		<p class="inverted">134 ﬁlm projects from 60 countries have been presented at Good Pitch events around the world.</p>
+		</div>
+		<div class="col-md-4">
+		<p>$17,000,000 raised in new funding for films and campaigns</p>		
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-blue b-r b-r-giant" style="background-image: url('{% static 'core/img/bg/goodpitch2.jpg' %}'); background-position: center;">
+	<div class="container row image-panel">
+	</div>
+</section>
+<section class="container-fluid p-t-50">
+</section>
+
+	<a class="anchor" name="impactaward"></a>
+	<hr class="large b-bd-red" />
+<section class="container-fluid bd-red-light">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Impact Award</h2>
+		<img src="{% static 'core/img/logos/impactaward_logo.png' %}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-red b-r b-r-giant" style="background-image: url('{% static 'core/img/bg-ia.jpg' %}');">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square">
+		<h4 class="bd-red">The Impact Award is the first prize to celebrate the power 
+of film as a driver of change; 
+the first which compels filmmakers to capture and articulate evidence of impact. 
+
+Our aim: to help build new fans for the films and create new partners for the campaign.</h4>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-red p-t-50">
+	<hr class="large" />
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+		<h5>"Finally an award that acknowledges the unique role that documentary plays in society"</h5>
+		<h5 class="inverted">Morgan Spurlock</h5>
+		</div>
+		<div class="col-md-4">
+		<h5>"Be under no illusion: the tenacity, commitment and perseverance of the compassionate few can change the world"</h5>
+		<h5 class="inverted">Susan Sarandon</h5>
+		</div>
+		<div class="col-md-4">
+ 			<div class="bubble bd-red-light inverted text-offset-huge-t">
+					<h5 class="p-t-20">Visit</h5>
+					<h4 class="inverted"><a class="white" href="http://britdocimpactaward.org" target="_blank">britdoc<br />impactaward.org</a></h4>
+ 			</div>
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-red b-r b-r-giant image-panel" style="background-image: url('{% static 'core/img/bg-ia2.jpg' %}'); background-position:middle;">
+	<div class="container row">
+	</div>
+</section>
+<section class="container-fluid p-t-50">
+</section>
+
+	<a class="anchor" name="impactfieldguide"></a>
+	<hr class="large b-bd-ig-green" />
+<section class="container-fluid bd-ig-green-light">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Impact Field Guide</h2>
+		<img src="{% static 'core/img/logos/impactguide_logo.png' %}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-ig-green b-r b-r-giant film-box" style="background-image: url('{% static 'core/img/bg/feild-guide4.jpg' %}');">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square">
+		<h4 class="bd-ig-green">Launched in 2014, the Impact Field Guide & Toolkit is a free online resource designed to 
+help anyone working with film make an even greater impact. </h4>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-ig-green p-t-50">
+	<hr class="large" />
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+			<div class="bubble bd-ig-green-light inverted text-offset-huge-t">
+				<h5 class="p-t-40">Visit</h5>
+				<h4 class="inverted"><a class="white" href="http://impactguide.org" target="_blank">impact<br />guide.org</a></h4>
+			</div>
+		</div>
+		<div class="col-md-5">
+		<h5>"All of us a Sundance Institute are proud to recognize the work of the extraordinary team at BRITDOC. Their boundless passion for great documentary film and their visionary ideas inspire us. We are glad to call them partners, collaborators and co-conspirators in promoting the great art of non-fiction film"</h5>
+		<h5 class="inverted">Keri Putnam, Executive Director, Sundance Institute</h5>
+		</div>
+		<div class="col-md-3">
+		<p class="inverted"><i class="fa fa-twitter"></i> @POVDocs "An excellent resource from @BRITDOC: The Impact Field Guide</p>
+		<p><i class="fa fa-twitter"></i> @PrinciplePics "Love this! From ART to IMPACT. Fantastic field guide from BRITDOC for creating measurable change."</p>
+		</div>		
+		 
+	</div>
+</section>
+<section class="container-fluid b-bd-ig-green b-r b-r-giant film-box" style="background-image: url('{% static 'core/img/bg/feild-guide3.jpg' %}'); background-position: center center;">
+	<div class="container row image-panel">
+	</div>
+</section>
+<section class="container-fluid p-t-50">
+</section>
+
+	<a class="anchor" name="docacademy"></a>
+	<hr class="large b-bd-da-blue" />
+<section class="container-fluid bd-da-blue-light">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Doc Academy</h2>
+		<img src="{% static 'core/img/logos/docacademy_logo.png' %}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-da-blue b-r b-r-giant film-box" style="background-image: url('{% static 'core/img/bg/docacademy2.jpg' %}');">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square">
+		<h5 class="bd-da-blue">Doc Academy is an online platform providing award-winning documentary film for free use in the classroom.</h5><h5 class="">BRITDOC believes that documentary film is one of the most effective tools in creating empathy and inspiring people to engage as active citizens at a local, national and international level. To change the way we see the world.</h5>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-da-blue p-t-50">
+	<hr class="large" />
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+			<h5 class="bd-da-blue-light">In 2012-13 we piloted the project in 18 schools. Since then we have taken it UK-wide.</h5>
+		</div>
+		<div class="col-md-4">
+			<h5 class="bd-da-blue-light">"One student became confident enough to talk about their own experience of being part of an immigrant family as the class had become more open and accepting"</h5>
+			<h5 class="inverted">Teacher</h5>		
+		</div>
+		<div class="col-md-4">
+			<div class="bubble bd-da-blue-light inverted text-offset-huge-t">
+				<h5 class="p-t-20">Visit</h5>
+				<h4 class="inverted"><a class="white" href="http://docacademy.org" target="_blank">doc<br />academy.org</a></h4>
+			</div>
+		</div>	
+	</div>
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+		<h5 class="inverted">100% of teachers</h5>
+		<h6 class="bd-da-blue-light">reported an increase in student engagement</h6>
+		</div>
+		<div class="col-md-4">
+		<h5 class="inverted">86% of teachers</h5>
+		<h6 class="bd-da-blue-light">reported an improvement in key 
+		English language skills</h6>
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-da-blue b-r b-r-giant" style="background-image: url('{% static 'core/img/bg/docacademy3.jpg' %}'); background-position: center;">
+	<div class="container row image-panel">
+	</div>
+</section>
+<section class="container-fluid p-t-50">
+</section>
+
+
+
+
+
+	<a class="anchor" name="somethingreal"></a>
+	<hr class="large b-bd-sr-pink" />
+<section class="container-fluid bd-sr-pink-light">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Something Real</h2>
+		<img src="{% static 'core/img/logos/somethingreal_logo.png' %}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-sr-pink b-r b-r-giant" style="background-image: url('{% static 'core/img/bg/somethingreal1.jpg' %}');">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square">
+		<h4 class="bd-sr-pink">Spreading our addiction to non-fiction. Two new, cult and classic doc recommendations every week. Available to watch on digital right now.</h4>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-sr-pink p-t-50">
+	<hr class="large" />
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-4">
+		<h5>"Just to say congrats on launching the well-named Something Real - it's a handy reference for those of us who've mainly ended up watching docs. Long may it prosper."</h5>
+		<h5 class="inverted">Christoph Warrack</h5>
+		</div>
+		<div class="col-md-4">
+			<h5 class="bd-sr-pink-light">We have so far recommended over 100 films to more than 70,000 people a week. Join Them.</h5>
+		</div>		
+		<div class="col-md-4">
+			<div class="bubble bd-sr-pink-light inverted text-offset-huge-t">
+				<h5 class="p-t-20">Visit</h5>
+				<h4 class="inverted"><a class="white" href="http://somethingreal.today" target="_blank">somethingreal<br />.today</a></h4>
+			</div>
+		</div>		 
+	</div>
+</section>
+<section class="container-fluid b-bd-sr-pink b-r b-r-giant" style="background-image: url('{% static 'core/img/bg/somethingreal3.jpg'%}');   background-position: center;">
+	<div class="container row image-panel">
+	</div>
+</section>
+
+<section class="container-fluid p-t-50">
+</section>
+
+{% endblock %}
+
+

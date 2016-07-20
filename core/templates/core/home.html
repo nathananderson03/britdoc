@@ -1,0 +1,524 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+{% load chunks %}
+{% load static %}
+
+{%block bodytag %}home{% endblock %}
+{% block html_title %}about{% endblock %}
+
+{% block content %}
+
+
+{% chunk "homepage-chunk-test" %}
+
+
+
+<section class="container-fluid intro" style="background-image: url('{% static 'core/img/bg/bg-home.jpg' %}');">
+	<div class="container row inverted">
+		<div class="col-md-offset-2 col-md-8">
+		<!-- <img src="img/britdoc-circle-heading.png" class="float-left" width="25%" />
+		<h1 class="underline font-grotesque">We are dedicated to the impact of art and the art of impact</h1> -->
+		<img src="{% static 'core/img/home-logo.png' %}" width="100%"/>
+		</div>
+	</div>
+</section>
+
+
+<section class="container-fluid m-t-30 m-b-30">
+	<div class="container short">
+	<!-- <ul class="three-col group">
+		<li>
+			<h5 class="font-grotesque m-b-0">Wish us a happy birthday on facebook</h5>
+			<div class="sixteen-nine padding-20 film-box" style="background-image: url('{% static 'core/img/cake-fast-xs.gif' %}'); position: relative;">
+				<a href="http://facebook.com/C4BRITDOC" target="_blank" class="block full-height padding-20 shade-down">
+				<h2 class="bd-green">britdoc</h2>
+				<h3 class="font-grotesque">Born 9<sup>th</sup> June 2005</h3>
+				</a>
+			</div>
+		</li>
+		<li class="">
+			<h5 class="font-grotesque m-b-0">Watch our first 2005 grantee short...</h5>
+			<div class="sixteen-nine padding-20 film-box" style="background-image: url('{% static 'core/img/films/talk-to-me.jpg' %}'); position: relative;">
+				<a href="https://archive.org/embed/VODO3TalkToMe" data-toggle="lightbox" class="block full-height shade-down padding-20">
+				<h2 class="inverted font-grotesque" style="font-size:5vw;">Talk<br /> to me</h2>
+				</a>
+			</div>
+		</li>
+		<li class="">
+			<h5 class="font-grotesque m-b-0">Just out: latest 2015 trailer...</h5>
+			<div class="sixteen-nine film-box" style="background-image: url('{% static 'core/img/3-5-minutes.jpg' %}'); position: relative;">
+				<a href="http://www.takepart.com/entity_iframe/node/52191" data-toggle="lightbox" class="block full-height padding-20">
+				</a>
+			</div>
+		</li>
+	</ul> -->
+
+	<ul class="three-col group text-box">
+		<li class="">
+			<h5 class="font-grotesque m-b-0">Coming Soon</h5>
+			<div class="sixteen-nine padding-20 p-t-50 bd-gp-logo-sm">
+				<a href="https://goodpitch.org/events/gpny2015" target="_blank" class="block padding-10">
+				<h5 class="inverted font-grotesque p-t-10">Good Pitch New York</h5>
+				<h4 class="font-grotesque">SEE YOU ON OCTOBER 20th!</h4>
+				</a>
+			</div>
+		</li>
+		<li class="">
+			<h5 class="font-grotesque m-b-0">Check this out	...</h5>
+			<div class="sixteen-nine padding-20 film-box" style="background-image: url('{% static 'core/img/banners/3-half-minutes.jpg' %}'); position: relative; background-position: bottom center;">
+				<a href="http://www.3andahalfminutes.com" class="block shade-right padding-20" target="_blank">
+				<h4 class="font-grotesque p-t-10">3 1/2 Minutes,<br /> 10 Bullets</h4>
+				<h6 class="bd-green">Opens in the UK this week</h6>
+				</a>
+			</div>
+		</li>
+		<li class="">
+			<h5 class="font-grotesque m-b-0">We’re big fans of your work</h5>
+			<div class="sixteen-nine padding-20 p-t-50 bd-bertha-logo-sm">
+				<a href="/films/index/" class="block padding-20">
+				<h5 class="inverted font-grotesque p-t-10">Latest Bertha BRITDOC</h5>
+				<h4 class="font-grotesque">grantees announced</h4>
+				</a>
+			</div>
+		</li>
+	</ul>
+	</div>
+	<hr class="b-bd-green" />
+</section>
+
+<section class="container-fluid">
+	<div class="container short row major-supporters p-t-25 p-b-20">
+		<div class="col-sm-3 col-xs-12 text-left text-center-sm">
+			<h6 class="m-b-20">Our major supporters</h6>
+		</div>
+		<div class="col-sm-3 col-xs-4 fs-13">
+			<img src="{% static 'core/img/logos/logo_bertha.png' %}" class="bertha" alt="Bertha Foundation" />
+			<p class="quote text-left">"We are proud to be partnering on such fantastic initiatives." <em>Rebecca Lichtenfeld, Bertha Philanthropies</em></p>
+		</div>
+		<div class="col-sm-3 col-xs-4 fs-13">
+			<img src="{% static 'core/img/logos/logo_ford.png' %}" class="ford" alt="Ford Foundation" />
+			<p class="quote">"Experts in collaboration, innovation and rapid prototyping." <em>Cara Mertes, Ford Foundation</em></p>
+		</div>
+		<div class="col-sm-3 col-xs-4 fs-13">
+			<img src="{% static 'core/img/logos/channel4.jpg' %}" class="channel4" alt="Channel 4" />
+			<p class="quote">"Their success is testament to the public appetite for award-winning films with something important to say." <em>David Abraham, Channel 4</em></p>
+		</div>
+	</div>
+</section>
+
+<a name="whatwedo" class="anchor"></a>
+<section class="container-fluid bd-green">
+	<div class="container row">
+		<div class="col-md-4">
+		<h2 class="huge-text">Hello & Welcome</h2>
+		</div>
+		<div class="col-md-8">
+		<h3 class="inverted huge-text">We are a non-profit founded in 2005 committed to enabling great documentary films and connecting them to audiences globally.</h3>
+		</div>
+	</div>
+</section>
+<section class="container-fluid">
+	<div class="container row">
+		<div class="col-md-offset-4 col-md-4">
+		<h5>Based in London and New York we work with filmmakers and partners all over the world.</h5>
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid">
+	<hr class="large" />
+	<div class="container row">
+		<div class="col-md-4">
+		<h5>Our Mission</h5>
+		</div>
+		<div class="col-md-8">
+		<h3 class="">We befriend great filmmakers, support great films, broker new partnerships, build new business models, share knowledge and develop audiences globally.</h3>
+		<h3 class="bd-green">We aim to lead by example - innovate, share and be copied, and innovate again.</h3>
+		</div>
+	</div>
+	<div class="container row">
+		<div class="col-md-7">
+		<h5 class="bd-warm-grey">"For many years BRITDOC has spotted and supported the most urgent projects - nurturing them with love, ensuring they make a difference. It is the forum for our most important conversations in nonfiction cinema."</h5>
+		<h5 class="bd-dark-grey">Joshua Oppenheimer, <br />Director, Act of Killing</h5>
+
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-green-light">
+	<hr class="large" />
+	<div class="container row">
+		<div class="col-md-4">
+		<h2>Our Driving Principle</h2>
+		</div>
+		<div class="col-md-8 col-lg-4">
+		<h5 class="inverted">Great documentaries enrich the lives of individuals. They have a unique ability to engage and connect people, transform communities and improve societies.</h5>
+		</div>
+	</div>
+	<div class="container row short p-b-30">
+		<div class="col-md-offset-6 col-md-4 col-xs-offset-2">
+		<h3 class="">That's why we are dedicated to the Impact of Art, and the Art of Impact.</h3>
+		</div>
+	</div>
+</section>
+<!-- <section class="container-fluid">
+	<div class="container row">
+		<div class="col-sm-5 text-offset-huge m-t-40 bg-white padding-20">
+		<h5 class="bd-green quote">For many years BRITDOC has spotted and supported the most urgent projects - nurturing them with love, ensuring they make a difference. But gradually BRITDOC become more than a fund. It is, by now, the forum for our most important conversations in nonfiction cinema" <br /><em>Joshua Oppenheimer, Director</em></h5>
+		</div>
+	</div>
+</section> -->
+<a name="download" class="anchor"></a>
+<section class="container-fluid bd-warm-grey p-b-50 film-box" style="background-image: url('{% static 'core/img/bg/bg-download-book.jpg' %}'); background-position: center center;">
+	<div class="container row">
+		<div class="col-sm-offset-6 col-xs-6 m-b-20">
+		<h3 class="inverted">Find out more, <a href="/static/core/pdf/Impact_of_Art_Web.pdf" class="white underline">download our latest book</a></h3>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-green-light p-t-30">
+	<div class="container row short">
+		<div class="col-xs-6 col-md-4">
+			<h2 class="inverted huge-text">What we do</h2>
+			<h5 class="bd-black">Our five strategic areas</h5>
+		</div>
+		<div class="col-md-8 text-center">
+			<img src="{% static 'core/img/diagram1.png' %}" class="text-offset-large-md-t"  style="max-width:900px;"/>
+		</div>
+	</div>
+	<hr class="huge b-bd-green m-b-0" />
+</section>
+<section class="container-fluid short project-stats">
+	<div class="container row">
+		<div class="col-md-8 text-center">
+			<h2 class="m-t-5 text-left p-b-10">How we do it</h2>
+				<div class="diagram" style="background-image:url('{% static 'core/img/diagram-bg.png' %}');">
+					<img src="{% static 'core/img/bg/diagram/arrow.png' %}" class="arrow" />
+					<a href="/funds" class="d-funds"><span></span><span>Our Funds</span><img src="{% static 'core/img/bg/diagram/funds.png' %}" /></a>
+					<a href="/films/index" class="d-films"><span></span><span>Our Films</span><img src="{% static 'core/img/bg/diagram/films.png' %}" /></a>
+					<a href="/projects#goodpitch" class="d-goodpitch"><span></span><span>Good Pitch</span><img src="{% static 'core/img/bg/diagram/gp.png' %}" /></a>
+					<a href="/projects#somethingreal" class="d-something-real"><span></span><span>Something Real</span><img src="{% static 'core/img/bg/diagram/sr.png' %}" /></a>
+					<a href="/projects#docacademy" class="d-doc-academy"><span></span><span>Doc Academy</span><img src="{% static 'core/img/bg/diagram/da.png' %}" /></a>
+					<a href="/projects#impactaward" class="d-impact-award"><span></span><span>Impact Award</span><img src="{% static 'core/img/bg/diagram/ia.png' %}" /></a>
+					<a href="/projects#fieldguide" class="d-field-guide"><span></span><span>Impact Field Guide</span><img src="{% static 'core/img/bg/diagram/ig.png' %}" /></a>
+				</div>
+		</div>
+		<div class="col-md-4 m-t-5 text-center">
+			<h5 class="bd-blue"> 18,700,000 <br /><small>$ Raised at 28 <a href="/projects#goodpitch" class="bd-blue underline">Good Pitch</a> events</small></h5>
+			<h5 class="bd-green m-t-20"> 4,282,192 <br /><small>£ Granted to films since 2005</small></h5>
+			<h5 class="bd-ig-green m-t-20">10,867 <br /><small>Users of the Impact Field Guide</small></h5>
+			<h5 class="bd-da-blue m-t-20">672 <br /><small>Teachers using Doc Academy</small></h5>
+			<h5 class="bd-green m-t-20">212 <br /><small>Films granted</small></h5>
+			<h5 class="bd-sr-pink m-t-20">57 <br /><small>Editions of Something Real</small></h5>
+			<h5 class="bd-red m-t-20">25 <br /><small>BRITDOC Impact Award winners</small></h5>
+			<h5 class="bd-dark-grey m-t-20">10	<br /><small>Years of operation</small></h5>
+			<h5 class="bd-green m-t-20">4 <br /><small>Oscar nominations (and 1 win)</small></h5>
+		</div>
+	</div>
+</section>
+<!-- <section class="container-fluid bd-black inverted p-t-50">
+	<div class="container row m-t-50">
+		<div class="col-md-offset-3 col-md-3 col-xs-6">
+			<h4 class="">Tweet Us</h4>
+			<p><a href="">@britdoc</a></p>
+		</div>
+		<div class="col-md-3 col-xs-6">
+			<h4 class="">Like Us</h4>
+			<p><a href="">#britdoc</a></p>
+		</div>
+		<div class="col-md-3 col-xs-6">
+			<h4 class="">Sign Up</h4>
+			<p><a href=""><i class="fa fa-envelope"></i> Mailing List</a></p>
+		</div>
+	</div>
+</section> -->
+<a name="mailout" class="anchor"></a>
+<section class="container-fluid bd-black inverted p-t-50 m-t-50">
+	<div class="container row m-t-50">
+		<div class="col-md-offset-2 col-md-4 col-xs-6">
+			<div class="bubble bd-green inverted text-offset-huge-t">
+			<h4 class=""><i class="fa fa-envelope-o"></i><br /> May we write to you?</h4>
+			<h5 class="bd-black"><a href="javascript:;" class="underline" data-toggle="modal" data-target="#mailing-modal">
+			Join our amazing mailing list<sup>*</sup></a></h5>
+			<p class="bd-black"><small>* with monthly playlist</small></p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6">
+			<h5 class="inverted">"I LOVE your newsletters! They're the only ones I read besides my own."</h5>
+			<h5 class="bd-green">Liz Holm, Producer</h5>
+			<h6 class="m-t-30">Don't believe Liz? </h6>
+			<a href="/mailout_preview/" target="_blank" class="btn btn-success bd-black">Preview the latest.</a>
+		</div>
+	</div>
+</section>
+<section class="container-fluid">
+	<div class="container row">
+		<div class="col-sm-4">
+			<h2 class="huge-text">Our Offices</h2>
+		</div>
+		<div class="col-sm-4 col-xs-6">
+			<div class="square b-a b-large b-bd-green text-offset-large-md margin-5 padding-20">
+			<h3>LONDON</h3>
+			<p>The BRITDOC Foundation & BRITDOC Charitable Trust, <br />50 Frith St, <br />London, W1D 4SQ</p>
+			</div>
+		</div>
+		<div class="col-sm-4 col-xs-6">
+			<div class="square b-a b-large b-bd-green text-offset-large-md margin-5 padding-20">
+			<h3>NEW YORK</h3>
+			<p>BRITDOC Inc, <br />45 Main Street, <br />Suite 547, Brooklyn, <br />New York</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<a name="contact" class="anchor"></a>
+<section class="container-fluid bd-green-w p-b-5">
+	<div class="container row p-b-10">
+		<div class="col-sm-4">
+			<h2>Contact Us</h2>
+			<h6>These are the most common enquiries, click to get straight to the right person</h6>
+		</div>
+	</div>
+	<div class="container row short p-b-30">
+		<div class="col-sm-2 col-xs-3">
+ 			<div class="bubble2 bd-blue inverted">
+	 			<h6 class="p-t-10"><a href="mailto:elise@britdoc.org" class="block">Get in touch about Good Pitch</a></h6>
+ 			</div>
+		</div>
+		<div class="col-sm-2 col-xs-3">
+ 			<div class="bubble2 bd-black inverted">
+	 			<h6 class="p-t-20"><a href="mailto:elise@britdoc.org">I have a press enquiry</a></h6>
+ 			</div>
+		</div>
+		<div class="col-sm-2 col-xs-3">
+ 			<div class="bubble2 bd-teal inverted">
+	 			<h6 class="p-t-10"><a href="mailto:luke@britdoc.org">I have an enquiry about film funds</a></h6>
+ 			</div>
+		</div>
+		<div class="col-sm-2 col-xs-3">
+ 			<div class="bubble2 bd-green inverted">
+	 			<h6 class="p-t-10"><a href="mailto:isabel@britdoc.org">I have a general enquiry</a></h6>
+ 			</div>
+		</div>
+	</div>
+</section>
+
+
+<a name="team" class="anchor"></a>
+<section class="container-fluid bd-green-light p-b-5">
+	<div class="container narrow row">
+		<div class="col-sm-3">
+			<h2 class="font-grotesque">Who<br /> Are We?</h2>
+		</div>
+		<div class="col-sm-6 col-sm-offset-3">
+					<h5 class="quote">"For me, BRITDOC is synonymous with passion, commitment, energy, humour, vision, rigour and vodka-based cocktails."</h5>
+					<h5 class="white">Tabitha Jackson, Sundance Institute</h5>
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid">
+	<ul class="container narrow row staff">
+	{% for staff in staff_staff %}
+		{% include 'core/_staff_item.html' %}
+	{% endfor %}
+	</ul>
+</section>
+
+<section class="container-fluid bd-green-w p-b-5 p-t-20 text-offset-large-t">
+	<div class="container narrow row">
+	</div>
+	<hr class="large b-bd-green" />
+	<div class="container narrow row">
+		<div class="col-sm-3">
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid">
+	<ul class="container narrow row team">
+		<li class="col-md-3 col-xs-6">
+			<h3 class="font-grotesque">Freelance Team</h3>
+		</li>
+	{% for staff in staff_freelance %}
+		{% include 'core/_staff_item.html' %}
+	{% endfor %}
+	</ul>
+</section>
+
+<section class="container-fluid bd-green-w">
+	<hr class="large b-bd-green" />
+	<div class="container narrow row">
+		<div class="col-sm-3">
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid">
+	<ul class="container narrow row team">
+		<li class="col-md-3 col-xs-6">
+			<h3 class="font-grotesque">Consultants</h3>
+		</li>
+	{% for staff in staff_consultant %}
+		{% include 'core/_staff_item.html' %}
+	{% endfor %}
+	</ul>
+</section>
+
+<section class="container-fluid bd-green-w p-b-5 p-t-20 text-offset-large-t">
+	<div class="container narrow row">
+	</div>
+	<hr class="large b-bd-green" />
+	<div class="container narrow row">
+		<div class="col-sm-3">
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid">
+	<div class="container narrow row">
+		<div class="col-md-3 col-xs-6">
+			<h3 class="font-grotesque">BRITDOC Foundation Board</h3>
+		</div>
+		<div class="col-md-3 col-xs-6 col-md-offset-3">
+			<h6>The BRITDOC Directors are joined by an exceptional team across our boards</h6>
+		</div>
+	</div>
+	<ul class="container narrow row staff">
+		{% for staff in staff_foundation %}
+			{% include 'core/_staff_item.html' %}
+		{% endfor %}
+	</ul>
+
+	<div class="container narrow row">
+	<hr class="large b-bd-green" />
+		<div class="col-sm-3">
+		</div>
+	</div>
+
+	<ul class="container narrow row team">
+		<li class="col-md-3 col-xs-6">
+			<h3 class="font-grotesque">BRITDOC Charitable Trustees</h3>
+		</li>
+		{% for staff in staff_charity %}
+			{% include 'core/_staff_item.html' %}
+		{% endfor %}
+	</ul>
+
+	<div class="container narrow row">
+	<hr class="large b-bd-green" />
+		<div class="col-sm-3">
+		</div>
+	</div>
+
+	<ul class="container narrow row staff">
+		<li class="col-md-3 col-xs-6">
+			<h3 class="font-grotesque">BRITDOC INC BOARD</h3>
+		</li>
+	{% for staff in staff_britdoc_inc %}
+		{% include 'core/_staff_item.html' %}
+	{% endfor %}
+	</ul>
+</section>
+
+<section class="container-fluid m-t-50">
+	<div class="container row short p-t-50">
+	</div>
+</section>
+<section class="container-fluid bd-warm-grey-light m-t-50 p-t-50">
+	<div class="container row short p-t-50">
+		<div class="col-md-2 col-xs-4">
+		<h2 class="huge-text font-grotesque bd-black text-offset-md-t" style="font-size:6em !important;">Our<br /> Values</h2>
+		</div>
+	</div>
+	<div class="container row short p-b-50">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<h5 class="font-grotesque">Independent</h5>
+					<p class="fs-13">We are free to choose who we work with and how we do it. This independence means we always uphold creative, journalistic and personal integrity.</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<h5 class="font-grotesque">Supportive</h5>
+					<p class="fs-13">We don’t interfere with the creative process, we support it. We are the friend of the filmmaker and the film always comes first.</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<h5 class="font-grotesque">Collaborative</h5>
+					<p class="fs-13">We have seen the greatest impact through collaboration.
+As such, we share what we learn and create best practice with our partners.</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<h5 class="font-grotesque">Evolving</h5>
+					<p class="fs-13">We are consciously and constantly evolving – because tomorrow needs new ideas. For us, problems are an opportunity for change.</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<h5 class="font-grotesque">Serious</h5>
+					<p class="fs-13">We take documentaries seriously, but not ourselves.</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<h5 class="font-grotesque">Joyous</h5>
+					<p class="fs-13">We love what we do and we want to work with people who feel the same way.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="container-fluid m-t-50 m-b-50">
+	<div class="container short">
+		<hr class="large" />
+	</div>
+</section>
+
+
+<a name="supporters" class="anchor"></a>
+<section class="container-fluid bd-green-light">
+	<div class="container row">
+		<div class="col-md-4">
+		<h2>Our Supporters</h2>
+		</div>
+	</div>
+	<div class="container row short">
+		<div class="col-md-offset-4 col-md-5">
+		<h5 class="inverted"><span class="bd-green-w">We can only do what we do</span> because of organisations and individuals who fund our work</h5>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-green-light p-t-20">
+	<hr class="large" />
+	<div class="container row m-t-40">
+		<div class="col-md-offset-4 col-md-4">
+		<h2 class="text-offset-large-xs">Thank you everyone.</h2>
+		</div>
+	</div>
+</section>
+<section class="container-fluid supporters p-t-50 m-t-50">
+	<div class="container narrow row">
+		<div class="col-sm-4">
+			<h4 class="font-grotesque">Major Partners:</h4>
+		</div>
+		<div class="col-sm-8">
+			<img src="{% static 'core/img/logos/logo_bertha.png' %}" alt="logo_bertha" class="major"/>
+			<img src="{% static 'core/img/logos/logo_ford.png' %}" alt="logo_ford"  class="major" />
+		</div>
+	</div>
+	<div class="container narrow row short">
+		<div class="col-sm-4">
+			<h4 class="font-grotesque">Founding Partner:</h4>
+		</div>
+		<div class="col-sm-8">
+			<img src="{% static 'core/img/logos/logo_channel4.png' %}" alt="Channel 4" class="major"/>
+		</div>
+	</div>
+	<div class="container narrow short row">
+		<div class="col-sm-3">
+			<h4 class="font-grotesque">Supporters:</h4>
+		</div>
+	</div>
+	<div class="container narrow short row">
+		<div class="col-sm-12">
+			<img src="{% static 'core/img/supporters.png' %}" class="supporters-mass" />
+		</div>
+	</div>
+</section>
+
+{% endblock %}

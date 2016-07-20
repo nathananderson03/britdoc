@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+
+{%block bodytag %}films{% endblock %}
+{%block htmltitle %}{{ film.name }}{% endblock %}
+
+{% block content %}
+
+<section class="film-body container-fluid inverted">
+	<div class="container row short p-t-30">
+		<div class="col-sm-offset-2 col-sm-8">
+			 {% if user.is_authenticated and user.is_staff %}
+				<a href='/admin/core/film/{{ film.id }}/' alt='EDIT FILM (admins only)'><h2 class="bd-green">{{ film.name }}</h2></a>
+			{% else %}
+				<h2 class="bd-green">{{ film.name }}</h2>
+			{% endif %}
+			
+			{% for dir in film.get_directors %}
+				<p>Dir.  {{dir.name}}</p>				
+			{% endfor %}
+			{% if film.stage %}
+				<p class="bd-green">Status: {{ film.stage }}<br />				
+			{% endif %}
+			{% if film.year %}
+				<strong><span class="white"><a href='{% url 'film:year' film.year %}'>{{ film.year }}</a></span></strong></p>	
+			{% endif %}
+		</div>
+	</div>
+	<div class="container row short">
+		<div class="col-sm-2">
+			<a href="{% url 'film:index' %}"><i class="fa fa-arrow-left"></i> Back to films list</a>
+		</div>
+		<div class="col-sm-8">
+			<!-- {% for laurel in film.laurel_set.all %}
+				<p>{{ laurel.award	}}</p>
+			{% endfor %} -->
+		</div>
+		<div class="col-sm-2 text-right">
+			<!-- ###Stu need to load next film link here -->
+			<!-- <a href="#">Next film (Cocaine Prison) <i class="fa fa-arrow-right"></i></a> -->
+		</div>
+	</div>
+	<div class="container row short p-t-20">
+		<div class="col-xs-12">
+			{% thumbnail film.get_primary_image.image "1000x400" crop="center" as im %}
+			<img src="{{ im.url }}" />
+			{% endthumbnail %}
+		</div>
+	</div>
+</section>
+<section class="container-fluid black inverted">
+	<div class="container row">
+		<div class="col-sm-9">
+			<h6 class="bd-warm-grey">How did we help:</h6>
+			<ul class="four-col group bd-warm-grey">
+				<li><span class="film-tick{% if film.britdoc_help_development %} film-tick-on{% endif %}"></span> Development</li>
+				<li><span class="film-tick{% if film.britdoc_help_production %} film-tick-on{% endif %}"></span> Production</li>	            
+				<li><span class="film-tick{% if film.britdoc_help_outreach %} film-tick-on{% endif %}"></span> Outreach</li>	      		 
+				<li><span class="film-tick{% if film.britdoc_help_goodpitch %} film-tick-on{% endif %}"></span> Good Pitch</li>
+			</ul>
+
+			<div class="container row film-fund-logos">
+				<div class="col-sm-offset-1 col-sm-11">
+					{% for fund  in  film.funds.all %}
+						<a href='{% url 'film:fund' fund.slug %}'><img src="/static/core/img/logos/{{ fund.image_name }}" style="max-width: 10vw; padding: 10px; float:left;" /></a><br />
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="container row">
+				<div class="col-sm-offset-1 col-sm-3">
+				<!-- <img src="/static/core/img/filmmakers/laura-poitras.jpg" class="p-b-30" style="max-width: 50%;" />
+				
+				<hr class="double b-bd-warm-grey" /> -->
+				
+				<p>
+				{% for dir in film.get_directors.all %}
+					<strong>Director</strong> {{ dir.name }}<br />
+				{% endfor %}
+					
+				{% for prod in film.get_producers.all %}
+					<strong>Producers</strong> {{ prod.name }}<br />
+				{% endfor %}
+					
+				
+					{% if film.year %}
+							<strong>Completed</strong> {{ film.year }}	
+					{% endif %}
+					{% if film.runtime %}
+						<strong>Runtime</strong> {{ film.runtime }}						
+					{% endif %}
+				</p>
+
+				<hr class="double b-bd-warm-grey" />
+				
+				<p>
+					{% for web in film.get_website %}
+						<strong><a href='{{ web.url }}'>{{ web.text | default:"Website" }}</a></strong><br />	
+					{% endfor %}
+					{% for twitter in film.get_twitter %}
+						<a href="{{ twitter.url }}" target="_blank"><strong>{{ twitter.text | default:"Twitter" }}</strong></a> <br />	
+					{% endfor %}
+				</p>
+				
+				</div>
+				
+				<div class="col-sm-8">
+					<h3 class="font-grotesque">SYNOPSIS</h3>
+						{{ film.synopsis | safe }}
+				</div>
+			</div>
+
+		</div>
+		<div class="col-sm-3">
+			
+			{% if film.get_docacademy %}
+			<div class="bd-da-blue padding-20 m-b-10">
+			<h6>Also in Schools:</h6>				
+				{% for rel in film.get_docacademy  %}
+					<a href="{{ rel.url }}"><img src="/static/core/img/logos/docacademy_logo.png" /></a>	
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			
+			
+				{% if film.recommended.all %}
+					<div class="bd-green-light">				
+						<h6 class="bd-black padding-20">You may also be interested in:</h6>	
+						<ul class="one-col group">
+						{% for rel in film.recommended.all %}								
+							{% thumbnail rel.get_primary_image.image "160x90" crop="center" as im %}
+							<li class="sixteen-nine film-box m-b-10" style="background-image: url('{{ im.url }}');">
+									<a href="{% url "film:display" rel.slug %}" class="block full-height">{{ rel.get_display_string|safe }}</a>
+							</li>						
+							{% endthumbnail %}
+						{% endfor %}
+						</ul>
+					</div>		
+				{% endif %}
+		</div>
+		<hr class="large b-bd-green" />
+	</div>
+</section>
+
+{% if film.reviews.all %}
+<section class="container-fluid black inverted">
+	<div class="container row">
+			<div class="col-sm-3">
+				<h6>What people<br /> have said</h6>
+			</div>
+			<div class="row">
+			{% for review in film.reviews.all %}
+				<div class="col-sm-6 col-sm-offset-6">
+					<h3>{{ review.body|safe }}</h3>
+					<h5>{{ review.attribution }}</h5>
+				</div>
+			{% endfor %}			
+			</div>
+	</div>
+</section>
+{% endif %}
+
+{% if film.trailer %}
+<section class="container-fluid black inverted">
+	<div class="container row">
+		<div class="col-sm-3">
+			<h6>Watch the<br /> trailer here</h6>
+		</div>
+		<div class="col-sm-9">
+			<iframe src="{{ film.trailer }}" width="100%" class="sixteen-nine"></iframe>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+<section class="container-fluid black inverted">
+	<div class="container row">
+		{% for img in film.get_other_image  %}
+		<div class="col-sm-6">
+				{% thumbnail img.image "x500" as im %}
+					<img src="{{ im.url }}" />
+				{% endthumbnail %}
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+{% if film.get_twitter  or film.get_facebook %}
+<section class="container-fluid">
+	<div class="container row white">
+		<div class="col-md-offset-4 col-md-4 col-xs-6">
+			<h2 class="huge-text bd-black">Follow</h2>
+			{% for twitter in film.get_twitter %}
+					<h5 class=" bd-black"><a href="{{ twitter.url }} ">{{ twitter.text }}</a></h5>	
+			{% endfor %}
+			{% for facebook in film.get_facebook %}
+					<h5 class=" bd-black"><a href="{{ facebook.url }}"><i class="fa fa-facebook"></i> {{ facebook.text }}</a></h5>
+			{% endfor %}
+		</div>
+		<!-- <div class="col-md-4 col-xs-6">
+				<h2 class="huge-text bd-black">Share this film</h2>
+				<h4 class=" bd-black">
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-facebook"></i></a>
+				</h4>
+		</div> -->
+	</div>
+</section>
+{% endif %}
+<!-- <section class="container-fluid">
+	<div class="container row">
+		<div class="col-md-offset-4 col-md-4 col-xs-6">
+			{% for laurel in film.laurel_set.all %}
+				<p>{{ laurel.award	}}</p>
+			{% endfor %}
+		</div>
+	</div>
+</section> -->
+
+<section class="container-fluid black inverted">
+	<hr class="large b-bd-green" />
+	<div class="container row">
+		<div class="col-sm-3">
+		</div>
+		<div class="col-sm-6">
+
+			{% if film.get_websites %}
+				<h3>More info at 
+				{% for website in film.get_websites %}
+						<a href='{{ website.url }}'> {{ website.url }}</a>
+						{% if not forloop.last %}, {% endif %}
+				{% endfor %}
+				</h3>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+

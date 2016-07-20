@@ -1,0 +1,20 @@
+# Compiled files
+*.pyc
+
+# never version local settings files 
+britdoc/settings_local.py
+
+# temp mainly or site local
+/media/*
+/log/*
+/tmp/*
+/static/*
+/components/*
+/data/*
+
+# db for development 
+db.sqlite3
+
+# osx nonsense 
+.DS_Store
+

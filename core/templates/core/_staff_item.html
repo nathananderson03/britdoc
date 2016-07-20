@@ -1,0 +1,32 @@
+{% load thumbnail %}
+
+<li class="col-md-3 col-xs-6">
+    {% thumbnail staff.image "200x300" crop="center" as im %}
+        {% if staff.about %}
+            <a data-toggle="modal" data-target="#{{ staff.name | slugify }}"><img src="{{ im.url }}" class="m-b-10" /></a>
+        {% else %}
+            <img src="{{ im.url }}" class="m-b-10" />
+        {% endif %}
+    {% endthumbnail %}
+    <p class="fs-12"><strong>{{staff.name}}</strong><br />
+    <strong>{{staff.role}}</strong><br />
+    <a href="mailto:{{ staff.email }}">{{ staff.email }}</a></p>
+    {% if staff.about %}
+        <div class="modal fade" id="{{ staff.name | slugify }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4>
+                    {{staff.name}}<br />
+                    {{staff.role}}
+                    </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                  {{ staff.about | safe }}
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endif %}
+</li>

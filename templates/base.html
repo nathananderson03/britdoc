@@ -1,0 +1,278 @@
+{% load url from future %}
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <!--
+    ____  _____  _____ _______ _____   ____   _____
+   |  _ \|  __ \|_   _|__   __|  __ \ / __ \ / ____|
+   | |_) | |__) | | |    | |  | |  | | |  | | |
+   |  _ <|  _  /  | |    | |  | |  | | |  | | |
+   | |_) | | \ \ _| |_   | |  | |__| | |__| | |____
+   |____/|_|  \_\_____|  |_|  |_____/ \____/ \_____|
+
+   Brought to you by the peeps at britdoc.org
+
+   This site is dedicated to the ol'bastard Luke Williams-Ellis
+
+    -->
+    <meta charset="utf-8">
+    <meta property="og:site_name" content="Britdoc"/>
+    <meta property="og:title" content="Britdoc"/>
+    <meta property="og:url" content="https://britdoc.org" />
+    <meta property="og:image" content="https://britdoc.org{% static 'core/img/facebook.png' %}" />
+    <meta property="og:description" content="We are a non-profit founded in 2005 committed to enabling great documentary films and connecting them to audiences globally." />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://britdoc.org">
+    <meta name="twitter:title" content="Britdoc">
+    <meta name="twitter:site" content="@britdoc">
+    <meta name="twitter:description" content="We are a non-profit founded in 2005 committed to enabling great documentary films and connecting them to audiences globally.">
+    <meta name="google-site-verification" content="gjo6b0lLh10sX7SfLPiSkwdp0ufsisjyaBs1_rkF7zQ" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{% static 'core/img/favicon.png' %}" />
+    <link rel="apple-touch-icon" href="{% static 'core/img/icon.png' %}"/>
+
+    <meta name="title" content="BRITDOC" />
+    <meta name="description" content="We are a non-profit founded in 2005 committed to enabling great documentary films and connecting them to audiences globally." />
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'bootstrap/dist/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'bootstrap/dist/css/bootstrap-theme.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'core/css/ekko-lightbox.min.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'core/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" media="all and (min-width: 768px)" href="{% static 'core/css/desktop.css' %}" />
+    <link href="{% static 'core/css/mightyslider.css' %}" rel="stylesheet" />
+
+    <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
+    <!-- # dont need this, delete 8th June <script type="text/javascript" src="{% static 'fittext/fittext.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'fitvids/jquery.fitvids.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery.easing/js/jquery.easing.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/ekko-lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/mightyslider.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/script.js' %}"></script>
+
+
+
+
+        {% block head_scripts %}{% endblock %}
+        {% block extra_css %}{% endblock %}
+
+        <title>BRITDOC: {% block html_title %}home{% endblock %}</title>
+
+</head>
+
+<body id="{% block bodytag %}{% endblock bodytag %}">
+
+<header>
+    <nav>
+        <span class="logo"><a href="/"><img src="{% static 'core/img/logos/britdoc_logo_inverted.png' %}" /></a></span>
+        <input type="checkbox" id="dropdown">
+        <label for="dropdown" onclick>MENU <i class="fa fa-bars"></i></label>
+        <ul>
+            <li class="social-icon s-twitter"><a href="http://twitter.com/britdoc" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li class="social-icon s-facebook"><a href="http://facebook.com/C4BRITDOC" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="social-icon s-email"><a href="/#mailout"><i class="fa fa-envelope"></i></a></li>
+            <li>
+                <a href="/">About</a>
+                <ul>
+
+                    <li><a href="/#whatwedo">What We Do</a></li>
+                    <li><a href="/#contact">Contact Us</a></li>
+                    <li><a href="/#team">Who We Are</a></li>
+                    <li><a href="/#supporters">Our Supporters</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/projects">Projects</a>
+                <ul>
+                    <li><a href="/projects#goodpitch">Good Pitch</a></li>
+                    <li><a href="/projects#impactaward">Impact Award</a></li>
+                    <li><a href="/projects#docacademy">Doc Academy</a></li>
+                    <li><a href="/projects#impactfieldguide">Impact Field Guide</a></li>
+                    <li><a href="/projects#somethingreal">Something Real</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/funds">Funds</a>
+                <ul>
+                    <li><a href="/bertha-journalism">Bertha Journalism</a></li>
+                    <li><a href="/bertha-connect">Bertha Connect</a></li>
+                    <li><a href="/britdoc-circle">Circle</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/films/index">Films</a>
+                <ul>
+                    <li><a href="/films/index">Directory</a></li>
+                    <li><a href="/films/alpha/A/">All Films A - Z</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+{% block content %}
+
+{% endblock content %}
+
+<footer>
+	<section class="footer_nav">
+		<div class="container">
+		<ul class="four-col group">
+			<li><p class="font-grotesque">ABOUT</p>
+				<a href="/">What We Do</a>
+				<a href="/#contact">Contact Us</a>
+				<a href="/#team">Who We Are</a>
+				<a href="/#supporters">Our Supporters</a>
+                {% if user.is_authenticated and user.is_staff %}
+                    <a href="/admin/" title="Admin Site (hidden unless logged in as admin!)">Admin</a>
+                {% endif %}
+
+			</li>
+			<li><p class="font-grotesque">PROJECTS</p>
+				<a href="/projects#goodpitch">Good Pitch</a>
+				<a href="/projects#impactaward">Impact Award</a>
+				<a href="/projects#docacademy">Doc Academy</a>
+				<a href="/projects#impactfieldguide">Impact Field Guide</a>
+				<a href="/projects#somethingreal">Something Real</a>
+			</li>
+			<li><p class="font-grotesque">FUNDS</p>
+				<a href="/bertha-journalism">Journalism</a>
+				<a href="/bertha-connect">Connect</a>
+				<a href="/circle-fund">Circle</a>
+				<a href="/resources">Resources</a>
+			</li>
+			<li><p class="font-grotesque">FILMS</p>
+				<a href="{% url 'film:index' %}">All Films A-Z</a>
+				<a href="{% url 'film:index' %}">Directory</a>
+			</li>
+		</ul>
+		</div>
+	</section>
+
+	<section class="footer_logos">
+		<div class="container">
+				<p>You are here:</p>
+				<a href="/"><img src="{% static 'core/img/logos/britdoc_logo_inverted.png' %}" class="logo-main"></a>
+				<p>You can also visit our other sites:</p>
+			<ul class="five-col">
+				<li>
+					<div class="image-holder">
+						<a href="http://goodpitch.org" target="_blank"><img src="{% static 'core/img/logos/goodpitch_logo_inverted.png' %}"></a>
+					</div>
+				</li>
+				<li>
+					<div class="image-holder">
+						<a href="http://docacademy.org" target="_blank"><img src="{% static 'core/img/logos/docacademy_logo_inverted.png' %}"></a>
+					</div>
+				</li>
+				<li>
+					<div class="image-holder">
+						<a href="http://britdocimpactaward.org" target="_blank"><img src="{% static 'core/img/logos/impactaward_logo_inverted.png' %}"></a>
+					</div>
+				</li>
+				<li>
+					<div class="image-holder">
+						<a href="http://impactguide.org" target="_blank"><img src="{% static 'core/img/logos/impactguide_logo_inverted.png' %}"></a>
+					</div>
+				</li>
+				<li>
+					<div class="image-holder">
+						<a href="http://somethingreal.today" target="_blank"><img src="{% static 'core/img/logos/somethingreal_logo_inverted.png' %}"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+			<p class="copyright-bar">&copy; <strong>2015 The BRITDOC Foundation</strong> &nbsp; In loving memory of Luke Williams-Ellis</p>
+	</section>
+</footer>
+
+<div class="modal fade" id="mailing-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body text-center">
+      <h3>Join our amazing list</h3>
+      <div id="mailout_form_message"></div>
+      <p>We need to know what you do and where you are<br /> to get you the most relevant information.</p>
+      <p>Please also share your name if you would like to.</p>
+
+      <form id="mailout_signup_form" action="/mailout_signup/" method="POST">
+      {% csrf_token %}
+      {{ mailout_signup_form | crispy }}
+      <button type="submit" class="btn btn-success m-t-30" id="mailout_signup_form_submit">Sign Me Up</button>
+      </form>
+      <div id="mailout_form_thanks" style="display: none;">
+        <h2>Thank You!<br />
+        for signing up</h2>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+      </div>
+<script type="text/javascript">
+$(function () {
+  $("#mailout_signup_form_submit").click(function(ev){
+    $.ajax({
+         type: 'POST',
+         url: $('#mailout_signup_form').attr('action'),
+         data: $('#mailout_signup_form').serialize(),
+         success: function(json) {
+             if(json.success == true){
+                $("#mailout_form_message").hide();
+                $("#mailout_signup_form").hide();
+                $("#mailout_form_thanks").show();
+                // $('#mailout_signup_form')[0].reset();
+             } else {
+                $("#mailout_form_message").text(json.message);
+                alert("Error Signing Up - please try again");
+             }
+          },
+        error: function(json) {
+            console.log(json); // log the returned json to the console
+            alert("There was an error");
+            $("#mailout_form_message").text("Error Adding");
+        }
+     });
+    ev.preventDefault();
+  });
+});
+</script>
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6257254-1");
+pageTracker._trackPageview();
+</script>
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4fa7878cf5a1f556660002b8');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+</body>
+</html>

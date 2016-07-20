@@ -1,0 +1,8 @@
+/* TEAM */
+	Design: James Franklin
+	Contact: james [at] britdoc.org
+
+	Development: Stu Tily
+        Contact: tily [at] subatomic.com
+
+

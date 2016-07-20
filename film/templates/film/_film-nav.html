@@ -1,0 +1,35 @@
+{% load url from future %}
+{% load thumbnail %}
+
+{% block content %}
+
+<h6 class="inverted">View:</h6>
+			<ul class="film-side-bar">
+				<li><a href="/films/index/"class="films">Featured</a></li>
+				<li><a href="/films/alpha/A/" class="films-alpha">All Films A-Z</a></li>
+				<li><a href="#" class="films-year">Year <span class="icon"><i class="fa fa-arrow-down"></i></span></a>
+					<ul>
+						{% for year in year_list %}
+							<li><a href='{% url 'film:year' year %}'>{{ year }}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="films-subject"><a href="#">Subject <span class="icon"><i class="fa fa-arrow-down"></i></span></a>
+					<ul>
+						{% for subject in subjects %}
+							<li><a href='{% url 'film:subject' subject.slug %}'>{{ subject.name }}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="films-funds"><a href="#">Active Funds <span class="icon"><i class="fa fa-arrow-down"></i></span></a>
+					<ul>
+						{% for fund in funds %}
+						    <li><a href='{% url 'film:fund' fund.slug %}'>{{ fund }}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+				<!-- ###Stu this will be a search when ready <li class="films-search"><input placeholder="search" /></li> -->
+			</ul>
+
+
+{% endblock %}

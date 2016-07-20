@@ -1,0 +1,83 @@
+# local settings file for britdoc site 
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "__FOO__"
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+# template debug now in templates settings
+# TEMPLATE_DEBUG = DEBUG
+
+ALLOWED_HOSTS = []
+
+
+AWS_UPLOAD_BUCKET_NAME = "__FOO__"
+AWS_UPLOAD_CLIENT_KEY = "__FOO__"
+AWS_UPLOAD_CLIENT_SECRET_KEY = "__FOO__"
+
+ZENCODER_API_BASE_URI = "https://app.zencoder.com/api/v2/"
+ZENCODER_API_KEY = "__FOO__"
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'log/flock.log',
+            'formatter': 'simple'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file','console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+     'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
+}
+
+# email for testing
+# run this in a terminal to see emails
+# python -m smtpd -n -c DebuggingServer localhost:1025
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'hello@britdoc.org'

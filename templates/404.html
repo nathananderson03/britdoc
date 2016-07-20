@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+{% load static %}
+
+{%block bodytag %}404{% endblock %}
+
+
+{% block content %}
+
+<section class="container-fluid intro" style="background-image: url('{% static 'core/img/bg/bg-home.jpg' %}');">
+	<div class="container row inverted">
+		<div class="col-md-offset-2 col-md-8">
+			<h1>Whoops - there's nothing here</h1>
+			<h3>Try going to the <a href="/">home page</a> and starting there or <a href="/#contact">contact us</a></h3>
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
+
+

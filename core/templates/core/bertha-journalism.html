@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+{% load static %}
+
+{%block bodytag %}bertha-journalism{% endblock %}
+{% block html_title %}Bertha BRITDOC Journalism Fund{% endblock %}
+
+{% block content %}
+<section class="container-fluid bd-teal-light">
+	<div class="container row">
+		<div class="col-sm-offset-3 col-sm-8">
+		<h2 class="giant-text font-grotesque">BERTHA BRITDOC JOURNALISM FUND</h2>
+		</div>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-teal-light">
+	<div class="container row bd-black">
+		<div class="col-md-offset-1 col-md-4">
+		<h4 class="bd-teal">The Bertha BRITDOC Journalism Fund is an international film fund dedicated to supporting long form feature documentaries of a journalistic nature.</h4>
+		</div>
+	</div>
+</section>
+<section class="container-fluid short bd-teal-w">
+	<div class="container row text-center">
+		<img src="{% static 'core/img/logos/bertha_britdoc_inverted_b.png' %}" />
+
+	</div>
+</section>
+<section class="container-fluid bd-teal-light">
+	<div class="container row p-t-0">
+		<hr class="giant b-bd-black m-t-0" />
+		
+		<div class="col-sm-4 col-sm-offset-2 p-t-30">
+		<p class="lead-in">This is a rolling application fund. We aim to respond to applicants within 8 weeks.</p>
+
+		<p>We are looking for films that break the important stories of our time, expose injustice, bring attention to unreported issues and cameras into regions previously unseen.</p>
+		
+		<p>This fund recognises such films are often delicate and protracted, making them difficult to fund. With a mission to enable in-depth analysis of issues through long-form investigative filmmaking, we are particularly looking to work with filmmakers with a journalistic background or those who are collaborating with journalists. It is key that the journalistic intent is embedded within the film itself rather than the film simply being about a journalist or journalistic institution.</p>
+		
+		<p>If your project is highly sensitive and you would like to submit a more secure proposal, please contact Luke Moody either via initial contact: luke@britdoc.org or using the public key associated with that email. For some guidance regarding PGP email see: <a href="http://bit.ly/1BpYQg0" target="_blank" class="white">http://bit.ly/1BpYQg0</a></p>
+		
+		<p>Since 2011 we have supported over 30 projects including Oscar and BAFTA winning CITIZENFOUR and Oscar nominated Virunga, The Square and Dirty Wars. Recent grantees can be found in our <a href="/films/fund/bertha-journalism/" class="white">Bertha BRITDOC Journalism Fund directory</a>.</p>
+
+		
+		</div>
+
+		<div class="col-sm-5 bd-teal padding-40 p-b-50 text-offset-md-t">
+		
+			<h2 class="inverted"><a href="http://apply.britdoc.org/apply/new/bbjournalism15r1">Apply now</a></h2>
+			<h2><a href="/static/core/pdf/bbjournofunconditions.pdf" class="bd-black">Download T&Cs</a></h2>
+			<h2><a href="/static/core/pdf/bertha-britdoc-journalism-fund-q-sample.pdf" class="bd-black">Sample Q’s</a></h2>
+
+		</div>		
+		
+
+	</div>
+</section>
+
+<section class="container-fluid">
+	<div class="container row p-t-20 p-b-20" style="min-height: 12vh;">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid bd-teal-light">
+	<div class="container row">
+		<div class="col-md-4">
+			<h4 style="margin-top: -16vh;">We can<br /> support:</h4>
+			<ul>
+				<li>In-depth research & development</li>
+				<li>Production funding for longitudinal investigations</li>
+				<li>Editorial support for long-form documentary structure</li>
+				<li>Hostile Environment Training</li>
+				<li>Legal advice during production and post-production</li>
+				<li>Legal advice for complex E&O policies</li>
+			</ul>
+			
+			<p><strong>Terms and Conditions</strong> Please download and review the terms and conditions, including a sample contract by clicking the buttons above.</p>
+		</div>
+		<div class="col-md-4">
+			<h4 style="margin-top: -16vh;">We don't<br /> fund:</h4>
+			<ul>
+				<li>30 minute or 1 hour productions intended solely for broadcast</li>
+				<li>Profiles</li>
+				<li>News</li>
+				<li>Current affairs</li>
+				<li>Fiction films</li>
+				<li>Formats</li>
+				<li>Series</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<h4 style="margin-top: -16vh;">To bear<br /> in mind:</h4>
+			<ul>
+				<li>This is a rolling fund</li>
+				<li>We will be supporting feature length documentary films 65mins+ in length</li>
+				<li>Recoupable grants from £5,000 to £50,000 are available</li>
+				<li>We aim to get back to all applicants within 8 weeks of application.  If your project is an urgent response to events we will endeavour to respond sooner</li>
+				<li>We are unlikely to fully fund a film so it must have international co-financing potential</li>
+				<li>We don’t fund retrospectively</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- <section class="container-fluid bd-teal-light">
+	<div class="container row">
+		<hr class="" />
+		<div class="col-md-6 col-md-offset-3 p-t-20">
+			<h2 class="font-grotesque">RECENTLY FUNDED FILMS</h2>
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid text-offset-large-t">
+	<div class="container">
+	<ul class="two-col group text-box">
+		<li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Borneo Case<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+		<li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Trial of Ratko Mladic<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+	</ul>
+	</div>
+</section> -->
+
+{% endblock %}
+
+

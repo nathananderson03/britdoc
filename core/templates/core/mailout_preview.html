@@ -1,0 +1,621 @@
+{% load url from future %}
+{% load thumbnail %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                
+        <title>BRITDOC Foundation</title>
+		<style type="text/css">
+			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+			body{width:100% !important;} /* Force Hotmail to display emails at full width */
+			body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
+
+			/* Reset Styles */
+			body{margin:0; padding:0;}
+			img{border:none; font-size:14px; font-weight:bold; height:auto; line-height:100%; outline:none; text-decoration:none; text-transform:capitalize;}
+			#backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+			body, #backgroundTable{
+
+			}
+			
+			h1, .h1{
+				color:#202020;
+				display:block;
+				font-family:Arial;
+				font-size:34px;
+				font-weight:bold;
+				line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+
+			h2, .h2{
+				color:#202020;
+				display:block;
+				font-family:Arial;
+				font-size:30px;
+				font-weight:bold;
+				line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+
+			h3, .h3{
+				color:#202020;
+				display:block;
+				font-family:Arial;
+				font-size:26px;
+				font-weight:bold;
+				line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+
+			h4, .h4{
+				color:#202020;
+				display:block;
+				font-family:Arial;
+				font-size:22px;
+				font-weight:bold;
+				line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+			
+			#templatePreheader{
+				/* background-color:#e7e7e2; */
+			}
+			
+			.preheaderContent div{
+				color:#505050;
+				font-family:Arial;
+				font-size:10px;
+				line-height:100%;
+				text-align:left;
+			}
+			
+			.preheaderContent div a:link, .preheaderContent div a:visited{
+				color:#336699;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+			
+
+			
+			#templateHeader{
+				/* background-color:#e7e7e2; */
+				border-bottom:0;
+			}
+			
+			.headerContent{
+				color:#202020;
+				font-family:Arial;
+				font-size:34px;
+				font-weight:bold;
+				line-height:100%;
+				padding:0;
+				text-align:center;
+				vertical-align:middle;
+			}
+			
+			.headerContent a:link, .headerContent a:visited{
+				color:#336699;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+			
+			#headerImage{
+				height:auto;
+				max-width:600px;
+			}
+			
+			#templateContainer{
+				/* background-color:#e7e7e2;	 */		
+			}
+			
+			.bodyContent{
+				background-color:#fff;
+			}
+
+			.bodyContent div{
+				color:#505050;
+				font-family:Arial;
+				font-size:14px;
+				line-height:150%;
+				text-align:left;
+			}
+
+			.bodyContent div a:link, .bodyContent div a:visited{
+				color:#336699;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+			.bodyContent img{
+				display:inline;
+				height:auto;
+			}
+
+			#templateSidebar{
+				background-color:#FFFFFF;
+			}
+
+			.sidebarContent div{
+				color:#505050;
+				font-family:Arial;
+				font-size:12px;
+				line-height:150%;
+				text-align:left;
+			}
+
+			.sidebarContent div a:link, .sidebarContent div a:visited{
+				color:#336699;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+			.sidebarContent img{
+				display:inline;
+				height:auto;
+			}
+
+			.leftColumnContent{
+				background-color:#FFFFFF;
+			}
+			
+			.leftColumnContent div{
+				color:#505050;
+				font-family:Arial;
+				font-size:14px;
+				line-height:150%;
+				text-align:left;
+			}
+			
+			.leftColumnContent div a:link, .leftColumnContent div a:visited{
+				color:#336699;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+			.leftColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/**
+			* @tab Columns
+			* @section right column text
+			* @tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
+			*/
+			.rightColumnContent{
+				background-color:#FFFFFF;
+			}
+			
+			/**
+			* @tab Columns
+			* @section right column text
+			* @tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
+			*/
+			.rightColumnContent div{
+				color:#505050;
+				font-family:Arial;
+				font-size:14px;
+				line-height:150%;
+				text-align:left;
+			}
+			
+			/**
+			* @tab Columns
+			* @section right column link
+			* @tip Set the styling for your email's right column links. Choose a color that helps them stand out from your text.
+			*/
+			.rightColumnContent div a:link, .rightColumnContent div a:visited{
+				color:#336699;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+			.rightColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Footer
+			* @section footer style
+			* @tip Set the background color and top border for your email's footer area.
+			* @theme footer
+			*/
+			#templateFooter{
+				background-color:#FDFDFD;
+				border-top:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section footer text
+			* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+			* @theme footer
+			*/
+			
+			td.footerContent {
+			background-color: #737371;
+			}
+			
+			.footerContent div{
+				color:#fff;
+				font-family:Helvetica, Arial;
+				font-size:12px;
+				line-height:125%;
+				text-align:left;
+			}
+
+			/**
+			* @tab Footer
+			* @section footer link
+			* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+			*/
+			.footerContent div a:link, .footerContent div a:visited{
+				color:#fff;
+				font-weight:bold;
+				text-decoration:underline;
+			}
+
+			.footerContent img{
+				display:inline;
+			}
+
+			/**
+			* @tab Footer
+			* @section social bar style
+			* @tip Set the background color and border for your email's footer social bar.
+			* @theme footer
+			*/
+			#social{
+				border:0;
+			}
+			
+			/**
+			* @tab Footer
+			* @section social bar style
+			* @tip Set the background color and border for your email's footer social bar.
+			*/
+			#social div{
+			}
+
+			/**
+			* @tab Footer
+			* @section utility bar style
+			* @tip Set the background color and border for your email's footer utility bar.
+			* @theme footer
+			*/
+			#utility{
+				border:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section utility bar style
+			* @tip Set the background color and border for your email's footer utility bar.
+			*/
+			#utility div{
+				text-align:center;
+			}
+
+			#monkeyRewards img{
+				max-width:190px;
+			}
+		</style>
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    	<center>
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+            	<tr>
+                	<td align="center" valign="top">
+                        <!-- // Begin Template Preheader \\ -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="750" id="templatePreheader">
+                            <tr>
+                                <td valign="top" class="preheaderContent">
+                                	
+                                	<!-- // Begin Module: Standard Preheader \ -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    	<tr>
+                                        	<td valign="top">
+                                            	<div mc:edit="std_preheader_content">
+                                                </div>
+                                            </td>
+                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+											<td valign="top" width="190">
+                                            	<div mc:edit="std_preheader_links">
+                                                </div>
+                                            </td>
+											<!-- *|END:IF|* -->
+                                        </tr>
+                                    </table>
+                                	<!-- // End Module: Standard Preheader \ -->
+                                
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // End Template Preheader \\ -->
+                    	<table border="0" cellpadding="0" cellspacing="0" width="750" id="templateContainer">
+                        	<tr>
+                            	<td align="left" valign="top">
+                            	<br /><br />
+
+                            	 <img src="http://britdoc.org/uploads/media_items/britdoc-logo-200px.original.png" alt="BRITDOC" width="200" height="53" />
+
+                                    <!-- // Begin Template Header \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="750" id="templateHeader">
+                                        <tr>
+                                            <td class="headerContent">
+                                            
+                                            	<!--  // Begin Module: Standard Header Image \\ -->
+                                           	<!-- <img src="https://britdoc.org/static/core/img/banners/mailout-2015-07-top.jpg" style="max-width:750px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext /> -->
+                                            	<!--  // End Module: Standard Header Image \\ -->
+
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Header \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Body \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="750" id="templateBody">
+                                    	<tr>
+                                        	<td valign="top" width="550">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="550">
+                                                	<tr>
+                                                    	<td valign="top">
+                                            				<table border="0" cellpadding="0" cellspacing="0" width="550">
+                                                            	<tr>
+                                                                	<td valign="top" class="bodyContent">
+                                                            
+                                                                        <!-- // Begin Module: Standard Content \\ -->
+                                                                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                            <tr>
+                                                                                <td valign="top">
+ 						                                                            <div>
+ 						                                                            
+ 						                                                            
+ 						                                                            
+ 						                                                            
+ 						                                                            
+						                                                                <h2><img src="https://farm6.staticflickr.com/5747/21258901078_7b462c0fab_z.jpg"><br></h2><h2>G'day!
+</h2><p>With the shock appointment of a new Prime Minister <i>and</i> Good Pitch² taking place in Sydney tomorrow, all our eyes are on Australia this week. Over the weekend, BRITDOC CEO Jess Search was working with the filmmakers who'll be presenting at the Sydney Opera House tomorrow, and the reports have been brilliant. We can't wait to see the reaction from the audience, and what each of the films is going to do in the world. There’s more on that below.
+</p><p>One of the film's from last year's edition, <strong><em>Gayby Baby</em></strong>, is opening in Australian cinemas this month having, controversially, hit all the national newspapers a couple of weeks back. You can find out about that, and all the rest of BRITDOC's news from across the world, below.
+</p><p>You could even take a listen to <a href="https://open.spotify.com/user/mccave/playlist/3wxfqPvClwTEsc3c0Zi03Q">our Oz-inspired playlist</a> while you read, including all your favourites…
+</p><p><australia< strong=""><strong>Australia </strong><strong>:: </strong><em>The Shins</em><br>
+	<strong>Adelaide</strong> :: <em>Ben Folds </em><br>
+	<strong>Okay Sydney, You Beat Me</strong> :: <em>Nic Dalton</em><br>
+	<strong>What I Would Give to be Australian</strong> :: <em>Jonny Craig</em> <br>
+	<strong>Crazy, Crazy Melbourne</strong> :: <em>Wall of Voodoo</em> <br>
+	Plus so many more...!
+	
+</australia<></p><p>OK folks, hooroo!
+</p><p>Elise &amp; <br>
+	All on Team BRITDOC
+</p><hr><h2><img src="https://farm6.staticflickr.com/5641/21228546650_e7812d3236_z.jpg"><br>GOOD PITCH² AUSTRALIA: <br>
+AT THE SYDNEY OPERA HOUSE!</h2><p><a href="“https://goodpitch.org/events/gpau2015”">Good Pitch returns to Australia</a> tomorrow, with its second outing at the Sydney Opera House. As you read this, the six fantastic film teams are nervously running through the pitches they spent the weekend prepping with Ian, Malinda, Mary, Sally and the rest of the Australian team at their Kangaroo Valley filmmaker retreat.
+</p><p>The Australian production team have done sterling work over the last months and we have utmost faith that they are about to produce an event every bit as slick, moving, and effective as last year's inaugural visit to Sydney Harbour.
+</p><p>Meanwhile, the filmmakers are crafting a group of top class projects. If they are even half as successful as last year's alums (which included <i><strong><a href="http://thatsugarfilm.com">That Sugar Film</a>, <a href="http://thegaybyproject.com">Gayby Baby</a></strong></i> and <i><strong><a href="http://frackmanthemovie.com">Frackman</a></strong></i>) then we're anticipating something very impressive indeed. No pressure!
+</p><p>Good luck one and all!
+</p><hr><h4></h4><h2><img src="https://farm6.staticflickr.com/5631/21251368008_0e0d005881_z.jpg"><br>GAYBY BABY! <br>IN AUSTRALIA AND IN LONDON!</h2><h2></h2><p>And speaking of Good Pitch² Australia... 2014 Alum <i><strong>Gayby Baby</strong></i> hit <a href="http://www.independent.co.uk/news/people/australian-education-minister-bans-schools-from-showing-documentary-about-lgbt-families-10473368.html" class="">front page news</a> last month when the Australian education minister banned the film from being screened in schools. Until that point, it was planned that the film would be screened as part of ‘Wear It Purple’, an event that supports the inclusion of LGBT pupils in schools. Well, if Success by Scandal really is a thing, then the cinema release of this film is going stratospheric!
+</p><p>The film is a beautiful portrait of four kids - Gus, Ebony, Matt and Graham - whose parents all happen to be gay. As they each wrestle with the challenges of oncoming adolescence, the outside world wrestles with the issue of marriage equality, and whether or not kids like them are at risk. We love this film, and are incredibly pleased that it's having its Australian release. If it's not coming to <a href="“http://thegaybyproject.com/screenings/“">a cinema near you</a>, then you can <a href="“http://tugg.com.au/gayby-baby/“">host a screening through Tugg!</a>.
+</p><p>Meanwhile, over in the UK, <strong><em>Gayby Baby</em></strong> will get its European premiere at the <a href="“http://www.bfi.org.uk/lff”">BFI London Film Festival</a>. Tickets are on sale, and may we recommend that you snag yourself a couple for one of their two screenings on Saturday October 10th and Monday October 12th!
+</p><h2><img src="https://farm1.staticflickr.com/760/20795641253_d259a87e1a_z.jpg"><br>GOOD PITCH² KENYA: <br>
+CALL FOR ENTRIES OPEN NOW!</h2><p>In case you missed our July announcement, we're currently collaborating with <a href="“http://www.mydocubox.org”">DocuBox</a>, the East African Documentary Film Fund, to produce <a href="“https://goodpitch.org/events/gpke2016”">Good Pitch² Kenya</a> in 2016. Taking place in Nairobi in October 2016, Good Pitch² Kenya will present up to seven filmmaking teams to pitch their feature documentary and its associated audience engagement campaign in front of a live audience of funders and changemakers.
+</p><p>If you have connections to filmmakers or filmmaking networks in Africa, please do pass on details of this call for entries, which is open until November 2nd 2015. The DocuBox team are looking for independent film teams from across the African continent ready to join the 2015/16 programme:
+</p><p>- Films that tackle a significant national or global issue or have something important to show us about the world and ourselves
+	<br>
+	- Film teams who are looking for partnerships and funding to help their film create change around leading social and environmental issues
+	<br>
+	- Films that are currently in production and will be 60+ minutes in length when finished
+	<br>
+	- English-speaking filmmakers who are citizens of an African country
+</p><p>And if you've got an eligible project, <a href="https://goodpitch.org/events/gpke2016">head over here to find out more information and apply</a>.
+</p><hr><h2><img src="https://farm6.staticflickr.com/5640/20793560764_a57323f242_z.jpg">
+</h2><h2>WHAT'S HAPPENING WITH OUR PEOPLE? </h2><h4>3.5 MINUTES, 10 BULLETS ON UK SCREENS
+</h4><p>Bertha-BRITDOC grantee <strong><em>3 1/2 Minutes, Ten Bullets</em></strong> tells the story of the shooting of black teenager Jordan Davis, and the subsequent trial of his murderer, Michael Dunn. Intercutting powerful footage from a riveting trial with intimate, observational scenes of Jordan's parents, Ron and Lucy, we see firsthand how difficult it is for them to grapple with unimaginable loss while fighting for justice for their son. The film integrates police interrogation footage, prison phone recordings and interviews with the others at the scene that night. The result is a powerful story about the devastating effects of racial bias, and the search for justice within the judicial system.
+</p><p>The film is coming to UK cinemas in October, but <a href="“https://membership.theguardian.com/event/guardian-live-docs-3-12-minutes-ten-bullets-17947762240”">you can catch a preview of it at Picturehouse Central</a> on Sept 30th. We recommend that you do.
+</p><h4>DREAMCATCHER HITS THE ROAD FOR A FALL USA TOUR</h4><p>Kim Longinotto's <strong><i>Dreamcatcher</i></strong> is a Good Pitch Chicago alum and winner of the Best Directing Award for Documentary at this year's Sundance Film Festival - and it embarks on its USA tour this fall! The tour kicks off with its Chicago premiere on September 11th for a week-long run at the Gene Siskel Film Center, followed by screenings in Tucson, AZ; Milwaukee, WI; Portland, OR; Cambridge, MA; Philadelphia, PA; Seattle, WA; and Columbus, OH. <a href="“http://www.dreamcatcherfilm.com/usa”">Find a screening near you!</a>
+</p><h4>THIS CHANGES EVERYTHING at TIFF</h4><p>Another Good Pitch Chicago 2014 alum, <i><strong>This Changes Everything</strong></i> is directed by journalist and filmmaker Avi Lewis and produced in conjunction with Naomi Klein's bestselling book of the same name. <a href="http://thischangeseverything.org”">The film is an urgent dispatch on climate change</a> that contends that the greatest crisis we have ever faced also offers us the opportunity to address and correct the inhumane systems that have created it. It must be seen!
+</p><p>Check out their <a href="https://youtu.be/IpuSt_ST4_U">brilliant trailer</a><br>
+	Catch the film at <a href="http://tiff.net/festivals/festival15/tiffdocs/this-changes-everything">Toronto International Film Festival</a> <br>
+	The film will be available in <a href="http://thefilm.thischangeseverything.org/screenings/">US theatres and on iTunes</a> from October 20th.
+</p><h4>CITIZENFOUR: A MARKETING HIT!</h4><p><i><strong>CITIZENFOUR</strong>'s</i> been nominated for the Best Doc Campaign at this year's <a href="http://www.screenawards.co.uk/shortlist">Screen Marketing Awards</a>. The big reveal takes place on October 22nd. How 'bout that then?
+</p><h4>(T)ERROR: KICKSTARTER, LFF, US THEATRICAL!
+</h4><p>After a barnstorming Kickstarter campaign that ensured the film would make it to our screens after all (the team have been hit with unprecedented legal bills that threatened the release), it's been announced that <a href="http:// terrordocumentary.org">Good Pitch alum <strong><i>(T)ERROR</i></strong></a> will play the BFI London Film Festival (October 10th and October 12th), whilst at the same time it hits theaters across the US - what a month!
+</p><p><strong><i>(T)ERROR</i></strong> is the first documentary to place filmmakers on the ground during a live FBI counterterrorism sting operation. With unprecedented access to an active informant, viewers get an unfettered glimpse of the government's counterterrorism tactics and the murky justifications behind them.
+</p><p>So far the film has been confirmed for NYC, Peoria, Houston, Dearborn, Pleasantville, Bellingham, Seattle and Los Angeles, with more to follow.
+</p><h4>THE GENIUS OF MARIAN: DIGITAL RELEASE!
+</h4><p>Good Pitch alumnus, <strong><em>The Genius of Marian</em></strong><em>,</em> will be <a href="https://goo.gl/h00lq7">released digitally via Quiver and Sundance Artist Services</a> on September 22nd, with a one week pre-sale window available on iTunes. This beautiful film is an intimate family portrait  exploring the heartbreak of Alzheimer's disease, the power of art and the meaning of family.
+</p><hr><h2><img src="https://farm1.staticflickr.com/696/21231583059_c144c875c4_z.jpg"><br>EMMY WIN FOR VIRUNGA!</h2><p>Team <span style="font-weight: 700;"><em>Virunga</em></span> has just returned from LA where they took home the <a href="http://variety.com/2015/tv/news/creative-arts-emmys-2015-winners-list-nominees-1201592186/">Best Cinematography prize at the Emmys</a>. Yes! Go team! And look at them up there looking devilishly handsome while they did it!
+</p><p>And it was also a good evening for <span style="font-weight: 700;"><em>CITIZENFOUR</em></span><span class="redactor-invisible-space"><span class="redactor-invisible-space"> which took back the Exceptional Merit in Documentary Filmmaking gong.</span></span>
+</p><p>Not bad for an evening on the red carpet - well done all!
+</p><hr><h2><img src="https://farm6.staticflickr.com/5622/21426902661_94d0baaf0d_z.jpg"><br>PARTY TIME!
+</h2><p>Save the Date, Chooks!
+</p><p>Our dear friends at <a href="http://chickeneggpics.org">Chicken &amp; Egg Pictures</a> are celebrating the esteemed organisation's 10th Anniversary on Thursday, October 22nd at the Art Directors Club in New York City and they want us all to come out and play! It's set to be a really splendid affair - the launch of an interactive installation bringing five Chicken &amp; Egg Pictures films to life, cocktails, music, conversation, and a fab silent auction. Why would you not?!
+</p><p><a href="“http://chickenegg.splashthat.com”">Pick up your tickets and see us there!</a>
+</p><hr><h2><br></h2><h2><img src="https://farm6.staticflickr.com/5739/21230718560_48c5c0ca70_z.jpg"><br>POITRAS AT NEW YORK FILM FESTIVAL!
+</h2><p>New York Film Festival starts later this month and amongst the stellar film lineup, we have a couple of gems for you. First up, the world premiere of instalments of Laura Poitras' Bertha BRITDOC-supported <i><strong>Asylum</strong></i>, in which she shadows WikiLeaks founder Julian Assange as he publishes classified diplomatic cables and seeks asylum in London's Ecuadorian embassy. <a href="http://www.filmlinc.org/films/field-of-vision-new-episodic-nonfiction/">Find out more and get your ticket!</a> <strong><em>Asylum</em></strong> is part of <i>Field of Vision</i>, the new documentary unit that was launched last week by dream team Poitras, AJ Schnack and Charlotte Cook - looking epic, above. <a href="https://theintercept.com/2015/09/09/field-of-vision-interview-laura-poitras-aj-schnack-charlotte-cook/">Get the skinny on <em>Field of Vision</em></a>.</p><p>You can catch that on September 27th, when you can also see <i>The Deeper They Bury Me</i>, part of the Convergence program. An interactive encounter with one of America's most renowned political prisoners, the piece plunges users into the universe of Black Panther activist Herman Wallace, who was held in solitary for over 40 years at Louisiana's notorious Angola penitentiary. Written and directed by Angad Bhalla, who also directed the Good Pitch documentary <strong><em>Herman's House</em></strong> on the same subject, this new piece is a compelling portrait of defiance. <a href="http://www.filmlinc.org/nyff2015/films/the-deeper-they-bury-me/">Get your ticket!</a>
+</p><hr><h2><img src="https://farm6.staticflickr.com/5809/20797294014_10260939bc_z.jpg"><br>LIBRARY HOURS
+</h2><p>Our illustrious Film &amp; Distribution Manager, Luke Moody, just <a href="https://11polaroids.wordpress.com/2015/08/14/making-it-real-together/">published this article about documentary as a collaborative conceit</a> and a finer accompaniment to a cup of tea, I can't imagine. So, pop the kettle on, folks...
+</p><p><a href="https://11polaroids.wordpress.com/2015/08/14/making-it-real-together/" target="_blank">https://11polaroids.wordpress.com/2015/08/14/making-it-real-together/</a><br>
+</p><p>...and see you next time!
+</p><p><br>
+</p><hr><p><br>
+</p>
+						                                                                
+						                                                                
+						                                                                
+						                                                                
+						                                                                
+						                                                                
+						                                                                
+						                                                                
+						                                                            </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!-- // End Module: Standard Content \\ -->
+                                                            
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                		</td>
+                                                    </tr>
+                                                    <tr>
+                                                    	<td valign="top">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="550">
+                                                                <tr>
+                                                                    <td valign="top" width="180" class="leftColumnContent">
+                                                                    
+                                                                        
+                                                                        
+                                                                    </td>
+                                                                    <td valign="top" width="180" class="rightColumnContent">
+                                                                    
+                                                                        
+                                                                                                                                            
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>                                                
+                                            </td>
+                                            <!-- // Begin Sidebar \\ -->
+                                        	<td valign="top" width="200" id="templateSidebar">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="200">
+                                                	<tr>
+                                                    	<td valign="top" class="sidebarContent">
+                                                        
+                                                            <!-- // Begin Module: Social Block with Icons \\ -->
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top:10px; padding-left:20px;">
+                                                                <tr>
+                                                                    <td valign="top">
+                                                                        <table border="0" cellpadding="0" cellspacing="4">
+                                                                            <tr mc:hideable>
+                                                                                <td align="left" valign="middle" width="16">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_facebook.png" style="margin:0 !important;" />
+                                                                                </td>
+                                                                                <td align="left" valign="top">
+                                                                                    <div mc:edit="sbwi_link_one">
+                                                                                        <a href="http://www.facebook.com/C4BRITDOC">Friend on Facebook</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr mc:hideable>
+                                                                                <td align="left" valign="middle" width="16">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_twitter.png" style="margin:0 !important;" />
+                                                                                </td>
+                                                                                <td align="left" valign="top">
+                                                                                    <div mc:edit="sbwi_link_two">
+                                                                                        <a href="http://twitter.com/#!/BRITDOC">Follow on Twitter</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr mc:hideable>
+                                                                                <td align="left" valign="middle" width="16">
+                                                                                </td>
+                                                                                <td align="left" valign="top">
+                                                                                    
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Social Block with Icons \\ -->
+
+                                                                                                                    
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <!-- // End Sidebar \\ -->
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Body \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Footer \\ -->
+                                	<table border="0" cellpadding="30" cellspacing="0" width="750" id="templateFooter" bgcolor="#FDFDFD">
+                                    	<tr>
+                                        	<td valign="top" class="footerContent">
+                                            
+                                                <!-- // Begin Module: Standard Footer \\ -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td colspan="2" valign="left" id="social">
+                                                            <div>
+                                                                 <a href="http://twitter.com/C4BRITDOC"><img src="http://britdoc.org/uploads/media_items/twitter.original.png" alt="twitter" width="32" height="32" /></a> <a href="http://www.facebook.com/C4BRITDOC"><img src="http://britdoc.org/uploads/media_items/facebook.original.png" alt="facebook" width="32" height="32" /></a>  <div style="height:50px;"></div></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="left" width="350">
+                                                        
+                                                                                                                   <div>
+                                                                <em>© 2015 BRITDOC Foundation</em><br />
+                                                                If you need to get in touch or have questions please mail <a href="mailto:hello@britdoc.org">hello@britdoc.org</a><br /> <br />
+
+
+                                                                <a href="http://foundation.britdoc.org/account/mailing.php?id=#PREFS_ID#">Change your mailing preferences or unsubscribe</a></div>
+                                                        </td>
+                                                        <td valign="middle" width="190" align="right">
+                                                            <br />
+                                                            <div>
+													<!--		<a href="http://britdoc.org"><img src="http://britdoc.org/images/logos/BritdocMailoutLogo.png" alt="Britdoc_logo" width="200" height="71" style="float:right;" /></a> -->
+
+                                                            </div>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" id="utility">
+                                                        
+														<div style="height:50px;"></div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Standard Footer \\ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Footer \\ -->
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>{% endblock %}

@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-Light.eot');
+	src: local('Gotham Light'), local('Gotham-Light'), url('../fonts/Gotham-Light.woff') format('woff'), url('../fonts/Gotham-Light.otf') format('opentype'), url('../fonts/Gotham-Light.svg#Gotham-Light') format('svg');
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-LightItalic.eot');
+	src: local('Gotham Light Italic'), local('Gotham-LightItalic'), url('../fonts/Gotham-LightItalic.woff') format('woff'), url('../fonts/Gotham-LightItalic.otf') format('opentype'), url('../fonts/Gotham-LightItalic.svg#Gotham-LightItalic') format('svg');
+	font-style:italic;
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-Bold.eot');
+	src: local('Gotham Bold'), local('Gotham-Bold'), url('../fonts/Gotham-Bold.woff') format('woff'), url('../fonts/Gotham-Bold.otf') format('opentype'), url('../fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+	font-weight:bold;
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-BoldItalic.eot');
+	src: local('Gotham Bold Italic'), local('Gotham-BoldItalic'), url('../fonts/Gotham-BoldItalic.woff') format('woff'), url('../fonts/Gotham-BoldItalic.otf') format('opentype'), url('../fonts/Gotham-BoldItalic.svg#Gotham-BoldItalic') format('svg');
+	font-weight:bold;
+	font-style:italic;
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('../fonts/proximanova-regular-webfont.eot');
+    src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('../fonts/proximanova-regular-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grotesque';
+  src: url('../fonts/GrotesqueMT-ExtraCondensed.eot?#iefix') format('embedded-opentype'),  url('../fonts/GrotesqueMT-ExtraCondensed.otf')  format('opentype'),
+	     url('../fonts/GrotesqueMT-ExtraCondensed.woff') format('woff'), url('../fonts/GrotesqueMT-ExtraCondensed.ttf')  format('truetype'), url('../fonts/GrotesqueMT-ExtraCondensed.svg#GrotesqueMT-ExtraCondensed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Font Faces
+------------------------------------
+*/
+.font-arial {
+  font-family: Arial, sans-serif !important;
+}
+
+.font-gotham {
+  font-family: 'Gotham' !important;
+}
+
+.font-grotesque {
+  font-family: 'Grotesque', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal !important;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}

@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+
+{%block bodytag %}films{% endblock %}
+
+
+{% block content %}
+
+
+
+	<div id="film-slider" class="mightyslider_modern_skin">
+		<div class="frame">
+			<div class="slide_element">
+				<div class="slide" data-mightyslider="cover: '/static/core/img/films-news/virunga.jpg', link: { url: 'http://blogs.indiewire.com/shadowandact/74th-peabody-award-winners-include-documentaries-freedom-summer-virunga-hbos-rise-of-james-brown-others-20150423', target: '_blank' }">
+					<div class="mSCaption infoBlock" data-msanimation="{ speed: 700, easing: 'easeOutQuint', style: { opacity: 1 } }">
+					<h4 class="bd-green">Latest News</h4>
+					<h4><a class="inverted" href="http://blogs.indiewire.com/shadowandact/74th-peabody-award-winners-include-documentaries-freedom-summer-virunga-hbos-rise-of-james-brown-others-20150423" target="_blank">Virunga wins a Peabody award!</a></h4>
+					<p class="inverted">“An unusual but successful melding of investigative journalism and nature filmmaking”</p>
+					<p class="inverted" data-toggle="modal" data-target="#mailing-modal"><a class="social-icons" href="javascript:;"><i class="fa fa-envelope"></i></a>
+						Get more of this: join our mailing list</p>
+
+					</div>
+					<div class="credit">&copy; Photo from virunga.org</a></div>
+				</div>
+
+				<div class="slide" data-mightyslider="cover: '/static/core/img/films-news/the-look-of-silence.jpg', link: { url: 'http://www.thelookofsilence.co.uk/screenings/', target: '_blank' }">
+					<div class="mSCaption infoBlock" data-msanimation="{ speed: 700, easing: 'easeOutQuint', style: { opacity: 1 } }">
+					<h4 class="bd-green">Latest News</h4>
+					<h4><a href="http://www.thelookofsilence.co.uk/screenings/" target="_blank" class="inverted">The Look of Silence</a></h4>
+					<p class="inverted">Joshua Oppenheimer’s film has already premiere in Indonesia (as seen here) and now opens in UK cinemas June 12th</p>
+					<p class="inverted" data-toggle="modal" data-target="#mailing-modal"><a class="social-icons" href="javascript:;"><i class="fa fa-envelope"></i></a>
+						Get more of this: join our mailing list</p>
+
+					</div>
+				</div>
+
+				<div class="slide" data-mightyslider="cover: '/static/core/img/films-news/yes-men.jpg', link: { url: 'http://theyesmenarerevolting.com/', target: '_blank' }">
+					<div class="mSCaption infoBlock" data-msanimation="{ speed: 700, easing: 'easeOutQuint', style: { opacity: 1 } }">
+					<h4 class="bd-green">Latest News</h4>
+					<h4><a href="http://theyesmenarerevolting.com/" target="_blank" class="inverted">The Yes Men Are Revolting</a></h4>
+					<p class="inverted">Mike and Andy’s film opens in US theatres and digital from June 12th</p>
+					<p class="inverted" data-toggle="modal" data-target="#mailing-modal"><a class="social-icons" href="javascript:;"><i class="fa fa-envelope"></i></a>
+						Get more of this: join our mailing list</p>
+
+					</div>
+				</div>
+
+				<div class="slide" data-mightyslider="cover: '/static/core/img/films-news/3-5-minutes.jpg', link: { url: 'http://www.takepart.com/three-and-a-half-minutes-ten-bullets', target: '_blank' }">
+					<div class="mSCaption infoBlock" data-msanimation="{ speed: 700, easing: 'easeOutQuint', style: { opacity: 1 } }">
+					<h4 class="bd-green">Latest News</h4>
+					<h4><a href="http://www.takepart.com/three-and-a-half-minutes-ten-bullets" target="_blank" class="inverted">3.5 Minutes, 10 Bullets</h4>
+					<p class="inverted">Marc Silver’s new film opens in US cinemas from June 19th</p>
+					<p class="inverted" data-toggle="modal" data-target="#mailing-modal"><a class="social-icons" href="javascript:;"><i class="fa fa-envelope"></i></a>
+						Get more of this: join our mailing list</p>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+<section class="film-body container-fluid">
+	<div class="container row">
+		<div class="col-md-3">
+			{% include "film/_film-nav.html" %}
+		</div>
+		<div class="col-md-9">
+		
+			<h2 class="bd-green m-b-50 p-b-50">Recent Grantees</h2>
+			<!-- ###Stu these films should be the featured / highlighted ones -->
+			<ul class="three-col group">
+				{% for f in films %} 
+				{% thumbnail f.get_primary_image.image "200x200" crop="center" as im %}
+				    <li class="sixteen-nine film-box" style="background-image: url('{{ im.url }}');">
+				{% empty %}
+				    <li class="sixteen-nine film-box bd-warm-grey">
+				{% endthumbnail %}
+					<a href='{% url 'film:display' f.slug %}' class="block full-height">{{ f.get_display_string|safe}}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+    <script>
+		$(document).ready(function(){
+			(function(){
+				var $example = $('#film-slider'),
+				$frame = $('.frame', $example),
+				$caption = $('#caption', $example),
+				$count = $('#count', $example);
+				$frame.mightySlider({
+					speed: 1000,
+					viewport: 'fill',
+					easing: 'easeOutExpo',
+					
+					// Navigation options
+					navigation: {
+						slideSize: '100%',
+						keyboardNavBy: 'slides'
+					},
+					
+					// Deep-linking options
+					deeplinking: {
+						linkID: 'fullscreen'
+					},
+
+					// Dragging
+					dragging: {
+						swingSpeed:    0.1
+					},
+
+					// Commands
+					commands: {
+						buttons: 1
+					}/*,
+
+					// Cycling
+					cycling: {
+						cycleBy: 'pages'
+					}*/
+				},
+				{
+					active: function(name, index){
+						$caption.html(this.slides[index].options.caption);
+						$count.html((index + 1) + '/' + this.slides.length + '&nbsp;&nbsp;&nbsp;&nbsp;' + this.slides[index].options.name);
+					}
+				});
+			})();
+		});
+    </script>
+
+
+{% endblock %}

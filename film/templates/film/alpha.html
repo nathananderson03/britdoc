@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+
+{%block bodytag %}films-alpha{% endblock %}
+
+
+{% block content %}
+
+<section class="film-body container-fluid">
+	<div class="container row">
+		<div class="col-md-3">
+			{% include "film/_film-nav.html" %}
+		</div>
+		<div class="col-md-9">
+		
+			<h1 class="bd-green m-b-50 p-b-50">All Films</h1>
+			
+<hr class="b-white" />
+			<a name="a">
+			<h2 class="m-t-20 inverted">{{ alpha|upper }}</h2>
+
+			<ul class="a-z-list">
+				{% for alpha in alpha_list %}
+					<li><a href='{% url 'film:alpha' alpha %}'>{{ alpha }}</a></li>
+				{% endfor %}
+			</ul>
+
+			<ul class="three-col group">
+				{% for f in films %} 
+
+				{% thumbnail f.get_primary_image.image "200x200" crop="center" as im %}				
+				<li class="sixteen-nine film-box" style="background-image: url('{{ im.url }}');"> 
+				{% empty %}
+				    <li class="sixteen-nine film-box bd-warm-grey">
+				{% endthumbnail %}
+					<a href='{% url 'film:display' f.slug %}' class="block full-height">{{ f.get_display_string|safe}}</a>				
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

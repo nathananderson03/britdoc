@@ -1,0 +1,412 @@
+/* Britdoc - james@britdoc.org */
+
+/* Typography
+----------------------------------------------------------------------------------------*/
+
+h1 { font-size: 5em; }
+h2 { font-size: 3em; }
+h3 { font-size: 2.5em; }
+h4 { font-size: 2em; }
+h5 { font-size: 1.5em; }
+h6 { font-size: 1em; }
+
+/* Layout
+----------------------------------------------------------------------------------------*/
+
+body {
+	padding-top: 104px;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.footer_nav .container {
+	max-width: 900px;
+}
+
+.supporters img {
+	max-width: 23%;
+}
+
+.supporters img.major {
+	max-width: 31%;
+}
+
+/* Menu
+----------------------------------------------------------------------------------------*/
+
+header {
+	height:110px; 
+	margin:0 auto 0 auto; 
+	background-color:#8f8777; 
+	-webkit-box-shadow:0 0 6px #000;
+	-moz-box-shadow:0 0 6px #000;
+	box-shadow:0 0 6px #000;
+	}
+nav {
+	height:68px; 
+	background:#333;
+	text-transform: uppercase;
+    font-family: 'Grotesque';
+	}
+nav ul {
+	position:relative;
+	margin:0; 
+	padding:0; 
+	list-style:none;
+	text-align: right;
+	}
+nav ul li {
+	display: inline-block; 
+	}
+nav ul li a, nav ul li a:visited {
+	display:block;
+	height: 68px; 
+	padding:0 15px; 
+	color:#fff;
+	font-size: 24px;
+	text-decoration:none;
+	-webkit-transition:background 190ms linear, color 190ms linear;
+	-moz-transition:background 190ms linear, color 190ms linear;
+	-ms-transition:background 190ms linear, color 190ms linear;
+	-o-transition:background 190ms linear, color 190ms linear;
+	transition:background 190ms linear, color 190ms linear;
+	}
+nav ul li:hover > a{
+	background:#8f8777; 
+	}
+nav ul li.active > a, nav ul li:hover > a, nav ul li.active:hover > a{
+	color: #79bb59;
+	}
+nav ul li > a:active, nav ul li.active > a:active{
+	background:#8f8777;
+	}
+nav ul li.social-icon.s-facebook a {
+	color: #627aac !important;
+	}
+nav ul li.social-icon.s-twitter a {
+	color: #4099FF !important;
+	}	
+nav ul li.social-icon.s-email a {
+	color: #79bb59 !important;
+	}	
+nav ul li.social-icon:hover a {
+	background-color: transparent;
+	opacity: 0.6;
+	}
+nav ul ul{
+	position:absolute;
+	left:0;
+	width:980px;
+	height:36px;
+	visibility:hidden;
+	opacity:0;
+	-webkit-transition:all 230ms linear 20ms;
+	-moz-transition:all 230ms linear 20ms;
+	-ms-transition:all 230ms linear 20ms;
+	-o-transition:all 230ms linear 20ms;
+	transition:all 230ms linear 20ms;
+	}
+nav ul:hover li.active ul{
+	visibility:hidden;
+	opacity:0;
+	}
+nav ul li.active ul, nav ul li:hover ul, nav ul li.active:hover ul{
+	visibility:visible;
+	opacity:1;
+	}
+nav ul ul li a {
+	height:36px;
+	padding:0 13px;
+	font-size:19px; 
+	color: #c7c3bb;
+	text-transform:uppercase;
+	line-height:35px;
+	-webkit-transition:color 250ms ease-out 20ms;
+	-moz-transition:color 250ms ease-out 20ms;
+	-ms-transition:color 250ms ease-out 20ms;
+	-o-transition:color 250ms ease-out 20ms;
+	transition:color 250ms ease-out 20ms;
+	}
+nav ul ul li:first-child a {
+	padding-left:15px;
+	}
+nav ul ul li:hover a {
+	color:#79bb59;
+	}
+nav ul ul li a:active{
+	color:#79bb59; 
+	}
+
+
+	nav span.logo {
+		position:absolute;
+		top:-4px;
+		left:14px;
+		margin:0;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:19px;
+		color:#FFF;
+		}
+	nav span.logo a {
+		position: relative;
+		height: 60px;
+		width: 180px;
+		z-index: 1;
+		display: block;
+		}
+	nav span.logo img {
+		max-width: 180px;
+		}
+		
+header {
+	height:104px;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top:0;
+	z-index: 1;
+	}
+nav {
+	height:68px;
+	}
+nav ul li a {
+	height: 68px;
+	line-height: 66px;
+	min-width: 100px;
+	text-align: center;
+	}
+nav ul li.social-icon a {
+	min-width: 28px;
+	font-size: 14px;
+	padding: 0;
+	}
+nav ul li.social-icon.s-facebook a {
+	min-width: 15px;
+	}
+nav input, nav label {
+	display:none;
+	}
+nav ul{
+	max-width: 1000px;
+	margin: 0 auto;
+	}
+nav ul ul{
+	width: 100%;
+	margin:0;
+	text-align: right;
+	}
+nav ul ul li {
+	border-left: 2px solid #c7c3bb;
+	}
+nav ul ul li:nth-child(1) {
+	border-left: none;
+	}
+nav ul:hover li.active ul{
+	margin:0;
+	}
+#search_box{
+	display:none;
+	}
+nav span.logo {
+	  margin: 0 auto;
+	  max-width: 1000px;
+	  right: 0;
+}
+
+/* #films
+--------------------------------------*/
+
+#films .a-z-list li a {
+	font-size: 15px;
+	}
+
+/* Helpers
+----------------------------------------------------------------------------------------*/
+
+.text-offset {
+	margin-bottom: -3em;
+}
+.text-offset-large {
+	margin-bottom: -6em;
+}
+
+/* Modals */
+
+  .modal.stick-up .modal-dialog {
+    margin: -5px auto;
+  }
+
+  .modal.slide-up .modal-dialog {
+    margin: 0 auto;
+  }
+
+  .modal.fill-in .modal-dialog {
+    margin: 0 auto;
+  }
+
+  .modal .modal-content {
+    box-shadow: none;
+  }
+
+/*
+ * Reusable layout components
+ */
+
+.col1, .col2, .col3, .col4, .col5, .col6, .col {
+	margin-bottom: 0;
+}
+
+.one-col {
+	width: 100%;
+	margin: 0;
+	position: relative;
+}
+
+.full-width {
+	width: 100%;
+}
+
+	
+.two-col-one-primary {
+	/* two column layout with .col1 as the primary (larger) column */
+}
+
+.two-col-one-primary .col1 {
+	width: 66%;
+	float: left;
+	margin-right: 4%;
+}
+
+.two-col-one-primary .col2 {
+	width: 30%;
+	float: left;
+}
+
+.two-col-two-primary {
+	/* two column layout with .col1 as the primary (larger) column */
+}
+
+.two-col-two-primary .col2 {
+	width: 66%;
+	float: left;
+
+}
+
+.two-col-two-primary .col1 {
+	width: 30%;
+	float: left;
+		margin-right: 4%;
+}
+
+.two-col {
+	width: 100%;
+	overflow: hidden;
+
+}
+
+	.two-col ul {
+		margin-bottom: 0;
+	}
+
+	.two-col li {
+		width: 45%;
+		margin: 0 5% 5% 0;
+		float: left;
+	}
+
+	.two-col li a {
+		border: none;
+	}
+
+	.two-col li:nth-child(2n+2){
+		margin-right: 0;	
+	}
+
+	.two-col li:nth-child(2n+1){
+		clear: left;	
+	}
+	
+.three-col {
+	width: 100%;
+	overflow: hidden;
+
+}
+
+	.three-col ul {
+		margin-bottom: 0;
+	}
+
+	.three-col li {
+		width: 30%;
+		margin: 0 5% 5% 0;
+		float: left;
+	}
+
+	.three-col li a {
+		border: none;
+	}
+
+	.three-col li:nth-child(3n+3){
+		margin-right: 0;	
+	}
+
+	.three-col li:nth-child(3n+1){
+		clear: left;	
+	}
+
+/*
+	Four equal column layout
+*/
+
+.four-col {
+	
+}
+
+	.four-col li {
+		width: 21.25%;
+		margin: 0 5% 5% 0;
+		float: left;
+	}
+	
+	.four-col li:nth-child(4n+4){
+		margin-right: 0;	
+	}
+
+/*
+	Five equal column layout
+*/
+
+.five-col {
+	
+}
+
+	.five-col li {
+		width: 16%;
+		margin: 0 5% 1em 0;
+		float: left;
+	}
+	
+	.five-col li:nth-child(5n+5){
+		margin-right: 0;	
+	}
+
+
+/*
+	Six equal column layout
+*/
+
+.six-col {
+	
+}
+
+	.six-col li {
+		width: 13%;
+		margin: 0 4% 1em 0;
+		float: left;
+	}
+	
+	.six-col li:nth-child(6n+6){
+		margin-right: 0;	
+	}

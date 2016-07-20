@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load thumbnail %}
+{% load static %}
+
+{%block bodytag %}funds{% endblock %}
+{% block html_title %}funds{% endblock %}
+
+{% block content %}
+
+<section class="container-fluid intro" style="background-image: url('{% static 'core/img/bg/bg-funds.jpg'%}');">
+<div class="shade-right"></div>
+	<div class="container row inverted">
+		<div class="col-sm-offset-2 col-md-3">
+			<h1 class="underline font-grotesque">It all starts with a great film</h1>
+		</div>
+	</div>
+</section>
+
+	<a name="bertha-journalism" class="anchor"></a>
+	<hr class="large b-bd-teal" />
+<section class="container-fluid bd-teal-w">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Bertha Britdoc<br /> Journalism Fund</h2>
+		<img src="{% static 'core/img/logos/bertha_britdoc_inverted_b.png'%}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-teal b-r b-r-giant image-panel" style="background-image: url('{% static 'core/img/bg/journo-fund.jpg'%}');">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square text-offset-huge">
+		<h4 class="bd-teal">The Bertha BRITDOC Journalism Fund is an international film fund dedicated to supporting long form feature documentaries of a journalistic nature.</h4>
+		<h6 class="m-t-30">"Simply put, the film would not have happened without the financial and editorial contribution and leadership that BRITDOC provided"</h6>
+		<h6 class="bd-teal">Marc Silver, Director</h6>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-teal p-t-50">
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-offset-8 col-md-4">
+			<h2 class="inverted"><a class="white" href="/bertha-journalism">more info <i class="fa fa-arrow-right"></i></a></h2>
+		</div>		
+		 
+	</div>
+</section>
+<!-- <section class="container-fluid bd-teal-light">
+	<div class="container row">
+	<!-- ###Stu need two films from this fund here -->
+	<!-- <ul class="two-col group text-box">
+		<li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Borneo Case<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+		<li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Trial of Ratko Mladic<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+	</ul>
+	</div>
+</section> -->
+<section class="container-fluid p-t-50">
+</section>
+
+	<a name="bertha-connect" class="anchor"></a>
+	<hr class="large b-bd-teal" />
+<section class="container-fluid bd-teal-w">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">Bertha Britdoc<br /> Connect Fund</h2>
+		<img src="{% static 'core/img/logos/bertha_britdoc_inverted_b.png'%}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-teal b-r b-r-giant image-panel" style="background-image: url('{% static 'core/img/bg/connect-fund.jpg'%}');">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square text-offset-huge">
+		<h4 class="bd-teal">The Bertha BRITDOC Connect Fund is the first European-based outreach and engagement fund, and is open to filmmakers from around the world.</h4>
+		<h6 class="m-t-30">"The Bertha BRITDOC team helped us not only financially, but also gave excellent creative advice, and was emotionally and morally highly supportive. Their professionallity and empathy helped us to keep on until the end. Thank you so much!"</h6>
+		<h6 class="bd-teal">Eszter Hajd&uacute;, Judgment in Hungary</h6>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-teal p-t-50">
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-offset-8 col-md-4">
+			<h2 class="inverted"><a class="white" href="/bertha-connect">more info <i class="fa fa-arrow-right"></i></a>
+		</div>		
+		 
+	</div>
+</section>
+<!-- <section class="container-fluid bd-teal-light">
+	<div class="container">
+	<ul class="two-col group text-box">
+	<!-- ###Stu need two films from this fund here -->
+		<!-- <li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Borneo Case<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+		<li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Trial of Ratko Mladic<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+	</ul>
+	</div>
+</section> -->
+<section class="container-fluid p-t-50">
+</section>
+
+	<a name="circle-fund" class="anchor"></a>
+	<hr class="large b-bd-bc-purple" />
+<section class="container-fluid bd-bc-purple-light">
+	<div class="container row logo-panel">
+		<div class="col-xs-offset-1 col-xs-11">
+		<h2 class="font-grotesque pull-left giant-text">BRITDOC Circle Fund</h2>
+		<img src="{% static 'core/img/logos/britdoc_circle_inverted_b.png' %}" class="pull-right" />
+		</div>
+	</div>
+</section>
+<section class="container-fluid b-bd-bc-purple b-r b-r-giant image-panel" style="background-image: url('{% static 'core/img/britdoc-circle.jpg'%}'); background-position: bottom;">
+	<div class="container row p-t-0">
+		<div class="col-sm-6 bg-white padding-50 p-b-50 square text-offset-huge">
+		<h5 class="bd-bc-purple">The BRITDOC Circle is a brand new film fund to support the very best artistic and journalistic films being made by filmmakers globally. It's a fund which complements existing international grantmakers, state funds and broadcast partners for maximum effectiveness.</h5>
+		<h6 class="m-t-30">"I invest in documentary because stories are what connect us. They make up our lives and are what we leave behind. The BRITDOC Circle Fund is an opportunity to come together with a small group of individuals to discuss the potential of documentary film, whilst funding some of the best projects around."</h6>
+		<h6 class="bd-bc-purple">Cristina Ljungberg, Circle Fund Founder Member</h6>
+		</div>
+	</div>
+</section>
+<section class="container-fluid bd-bc-purple p-t-50">
+	<div class="row container short p-t-20 p-b-20">
+		<div class="col-md-offset-8 col-md-4">
+			<h2 class="inverted"><a class="white" href="/britdoc-circle">more info <i class="fa fa-arrow-right"></i></a>
+		</div>		
+		 
+	</div>
+</section>
+<!-- <section class="container-fluid bd-bc-purple-light">
+	<div class="container">
+	<ul class="two-col group text-box">
+	<!-- ###Stu need two films from this fund here -->
+		<!-- <li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Borneo Case<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+		<li class="sixteen-nine film-box" style="background: url('img/bg/bg-home.jpg');">
+			<a href="#" class="block full-height">The Trial of Ratko Mladic<br /> More <i class="fa fa-arrow-right"></i></a>
+		</li>
+	</ul>
+	</div>
+</section> -->
+<section class="container-fluid p-t-50">
+</section>
+
+{% endblock %}
+
+
